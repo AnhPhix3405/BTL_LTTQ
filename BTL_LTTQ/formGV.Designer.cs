@@ -55,7 +55,7 @@
             this.label18 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tbHocHam = new System.Windows.Forms.TextBox();
-            this.dgvSV = new System.Windows.Forms.DataGridView();
+            this.dgvGV = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
@@ -66,7 +66,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.tbHoTen = new System.Windows.Forms.TextBox();
+            this.tbHoTenGV = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.tbNgaysinh = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -81,7 +81,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.btnSua.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGV)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -214,6 +214,7 @@
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(114, 45);
             this.btnThem.TabIndex = 27;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // label15
             // 
@@ -259,6 +260,7 @@
             this.tbTimKiemTheoTen.Size = new System.Drawing.Size(340, 26);
             this.tbTimKiemTheoTen.TabIndex = 0;
             this.tbTimKiemTheoTen.Text = "nhập tên hoặc mã gv";
+            this.tbTimKiemTheoTen.TextChanged += new System.EventHandler(this.tbTimKiemTheoTen_TextChanged);
             // 
             // label4
             // 
@@ -354,6 +356,7 @@
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(114, 45);
             this.btnSua.TabIndex = 28;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // label18
             // 
@@ -386,15 +389,17 @@
             this.tbHocHam.Size = new System.Drawing.Size(245, 26);
             this.tbHocHam.TabIndex = 19;
             // 
-            // dgvSV
+            // dgvGV
             // 
-            this.dgvSV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSV.Location = new System.Drawing.Point(13, 392);
-            this.dgvSV.Margin = new System.Windows.Forms.Padding(4);
-            this.dgvSV.Name = "dgvSV";
-            this.dgvSV.RowHeadersWidth = 51;
-            this.dgvSV.Size = new System.Drawing.Size(1443, 287);
-            this.dgvSV.TabIndex = 11;
+            this.dgvGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGV.Location = new System.Drawing.Point(13, 392);
+            this.dgvGV.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvGV.Name = "dgvGV";
+            this.dgvGV.RowHeadersWidth = 51;
+            this.dgvGV.Size = new System.Drawing.Size(1443, 287);
+            this.dgvGV.TabIndex = 11;
+            this.dgvGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGV_CellContentClick);
+            this.dgvGV.Click += new System.EventHandler(this.dgvGV_Click);
             // 
             // label6
             // 
@@ -452,7 +457,7 @@
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.tbHoTen);
+            this.panel2.Controls.Add(this.tbHoTenGV);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.tbNgaysinh);
             this.panel2.Controls.Add(this.label7);
@@ -526,14 +531,14 @@
             this.label9.TabIndex = 8;
             this.label9.Text = "Họ tên:";
             // 
-            // tbHoTen
+            // tbHoTenGV
             // 
-            this.tbHoTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbHoTen.Location = new System.Drawing.Point(99, 75);
-            this.tbHoTen.Margin = new System.Windows.Forms.Padding(4);
-            this.tbHoTen.Name = "tbHoTen";
-            this.tbHoTen.Size = new System.Drawing.Size(264, 26);
-            this.tbHoTen.TabIndex = 9;
+            this.tbHoTenGV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbHoTenGV.Location = new System.Drawing.Point(99, 75);
+            this.tbHoTenGV.Margin = new System.Windows.Forms.Padding(4);
+            this.tbHoTenGV.Name = "tbHoTenGV";
+            this.tbHoTenGV.Size = new System.Drawing.Size(264, 26);
+            this.tbHoTenGV.TabIndex = 9;
             // 
             // label8
             // 
@@ -613,9 +618,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1469, 688);
+            this.ClientSize = new System.Drawing.Size(1452, 688);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dgvSV);
+            this.Controls.Add(this.dgvGV);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -623,6 +628,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "formGV";
             this.Text = "formGV";
+            this.Load += new System.EventHandler(this.formGV_Load);
             this.btnThem.ResumeLayout(false);
             this.btnThem.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -634,7 +640,7 @@
             this.btnSua.ResumeLayout(false);
             this.btnSua.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGV)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -674,7 +680,7 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox tbHocHam;
-        private System.Windows.Forms.DataGridView dgvSV;
+        private System.Windows.Forms.DataGridView dgvGV;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label12;
@@ -685,7 +691,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox tbHoTen;
+        private System.Windows.Forms.TextBox tbHoTenGV;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox tbNgaysinh;
         private System.Windows.Forms.Label label7;
