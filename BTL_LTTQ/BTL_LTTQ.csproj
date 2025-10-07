@@ -46,120 +46,120 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaoCao.cs">
+    <Compile Include="GUI\BaoCao.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BaoCao.Designer.cs">
+    <Compile Include="GUI\BaoCao.Designer.cs">
       <DependentUpon>BaoCao.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="GUI\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="GUI\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="formDiem.cs">
+    <Compile Include="GUI\formDiem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formDiem.Designer.cs">
+    <Compile Include="GUI\formDiem.Designer.cs">
       <DependentUpon>formDiem.cs</DependentUpon>
     </Compile>
-    <Compile Include="formGV.cs">
+    <Compile Include="GUI\formGV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formGV.Designer.cs">
+    <Compile Include="GUI\formGV.Designer.cs">
       <DependentUpon>formGV.cs</DependentUpon>
     </Compile>
-    <Compile Include="formLopHP.cs">
+    <Compile Include="GUI\formLopHP.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formLopHP.Designer.cs">
+    <Compile Include="GUI\formLopHP.Designer.cs">
       <DependentUpon>formLopHP.cs</DependentUpon>
     </Compile>
-    <Compile Include="formLopTC.cs">
+    <Compile Include="GUI\formLopTC.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formLopTC.Designer.cs">
+    <Compile Include="GUI\formLopTC.Designer.cs">
       <DependentUpon>formLopTC.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormMain.cs">
+    <Compile Include="GUI\FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMain.Designer.cs">
+    <Compile Include="GUI\FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="formMonHoc.cs">
+    <Compile Include="GUI\formMonHoc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formMonHoc.Designer.cs">
+    <Compile Include="GUI\formMonHoc.Designer.cs">
       <DependentUpon>formMonHoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="formSV.cs">
+    <Compile Include="GUI\formSV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formSV.Designer.cs">
+    <Compile Include="GUI\formSV.Designer.cs">
       <DependentUpon>formSV.cs</DependentUpon>
     </Compile>
-    <Compile Include="InBaoCao.cs">
+    <Compile Include="GUI\InBaoCao.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InBaoCao.Designer.cs">
+    <Compile Include="GUI\InBaoCao.Designer.cs">
       <DependentUpon>InBaoCao.cs</DependentUpon>
     </Compile>
-    <Compile Include="Loading.cs">
+    <Compile Include="GUI\Loading.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Loading.Designer.cs">
+    <Compile Include="GUI\Loading.Designer.cs">
       <DependentUpon>Loading.cs</DependentUpon>
     </Compile>
-    <Compile Include="Loadthu.cs">
+    <Compile Include="GUI\Loadthu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Loadthu.Designer.cs">
+    <Compile Include="GUI\Loadthu.Designer.cs">
       <DependentUpon>Loadthu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="GUI\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="GUI\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="BaoCao.resx">
+    <EmbeddedResource Include="GUI\BaoCao.resx">
       <DependentUpon>BaoCao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="GUI\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formDiem.resx">
+    <EmbeddedResource Include="GUI\formDiem.resx">
       <DependentUpon>formDiem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formGV.resx">
+    <EmbeddedResource Include="GUI\formGV.resx">
       <DependentUpon>formGV.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formLopHP.resx">
+    <EmbeddedResource Include="GUI\formLopHP.resx">
       <DependentUpon>formLopHP.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formLopTC.resx">
+    <EmbeddedResource Include="GUI\formLopTC.resx">
       <DependentUpon>formLopTC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormMain.resx">
+    <EmbeddedResource Include="GUI\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formMonHoc.resx">
+    <EmbeddedResource Include="GUI\formMonHoc.resx">
       <DependentUpon>formMonHoc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formSV.resx">
+    <EmbeddedResource Include="GUI\formSV.resx">
       <DependentUpon>formSV.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Loading.resx">
+    <EmbeddedResource Include="GUI\Loading.resx">
       <DependentUpon>Loading.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Loadthu.resx">
+    <EmbeddedResource Include="GUI\Loadthu.resx">
       <DependentUpon>Loadthu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
+    <EmbeddedResource Include="GUI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -183,6 +183,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BLL\" />
+    <Folder Include="DAL\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
