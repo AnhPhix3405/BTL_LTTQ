@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\Login\LoginBLL.cs" />
+    <Compile Include="BLL\Session\UserSession.cs" />
+    <Compile Include="DAL\Login\LoginDAL.cs" />
     <Compile Include="GUI\BaoCao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,9 +187,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BLL\" />
-    <Folder Include="DAL\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
