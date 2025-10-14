@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="BLL\Login\LoginBLL.cs" />
     <Compile Include="BLL\Session\UserSession.cs" />
+    <Compile Include="DAL\DatabaseConnection.cs" />
     <Compile Include="DAL\Login\LoginDAL.cs" />
     <Compile Include="GUI\BaoCao.cs">
       <SubType>Form</SubType>

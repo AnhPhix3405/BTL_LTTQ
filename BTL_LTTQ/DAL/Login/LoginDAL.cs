@@ -6,29 +6,21 @@ namespace BTL_LTTQ.DAL
 {
     public class LoginDAL
     {
-        private string connectionString = @"Data Source=EMPHI\SQLEXPRESS;Initial Catalog=QL_GiangDay;Integrated Security=True";
-
         // Phương thức kiểm tra đăng nhập
         public bool Login(string tenDangNhap, string matKhau)
         {
             try
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    connection.Open();
-                    
-                    string query = "SELECT COUNT(*) FROM TaiKhoan WHERE TenDangNhap = @TenDangNhap AND MatKhau = @MatKhau";
-                    
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        command.Parameters.AddWithValue("@TenDangNhap", tenDangNhap);
-                        command.Parameters.AddWithValue("@MatKhau", matKhau);
-                        
-                        int count = (int)command.ExecuteScalar();
-                        
-                        return count > 0; // Trả về true nếu tìm thấy tài khoản
-                    }
-                }
+                string query = "SELECT COUNT(*) FROM TaiKhoan WHERE TenDangNhap = @TenDangNhap AND MatKhau = @MatKhau";
+                
+                SqlParameter[] parameters = {
+                    new SqlParameter("@TenDangNhap", tenDangNhap),
+                    new SqlParameter("@MatKhau", matKhau)
+                };
+                
+                int count = Convert.ToInt32(DatabaseConnection.ExecuteScalar(query, parameters));
+                
+                return count > 0; // Trả về true nếu tìm thấy tài khoản
             }
             catch (Exception ex)
             {
@@ -42,27 +34,19 @@ namespace BTL_LTTQ.DAL
         {
             try
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    connection.Open();
-                    
-                    string query = "SELECT Id, TenDangNhap, LoaiTaiKhoan FROM TaiKhoan WHERE TenDangNhap = @TenDangNhap AND MatKhau = @MatKhau";
-                    
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        command.Parameters.AddWithValue("@TenDangNhap", tenDangNhap);
-                        command.Parameters.AddWithValue("@MatKhau", matKhau);
-                        
-                        SqlDataAdapter adapter = new SqlDataAdapter(command);
-                        DataTable dt = new DataTable();
-                        adapter.Fill(dt);
-                        
-                        if (dt.Rows.Count > 0)
-                            return dt.Rows[0];
-                        else
-                            return null;
-                    }
-                }
+                string query = "SELECT Id, TenDangNhap, LoaiTaiKhoan FROM TaiKhoan WHERE TenDangNhap = @TenDangNhap AND MatKhau = @MatKhau";
+                
+                SqlParameter[] parameters = {
+                    new SqlParameter("@TenDangNhap", tenDangNhap),
+                    new SqlParameter("@MatKhau", matKhau)
+                };
+                
+                DataTable dt = DatabaseConnection.ExecuteQuery(query, parameters);
+                
+                if (dt.Rows.Count > 0)
+                    return dt.Rows[0];
+                else
+                    return null;
             }
             catch (Exception ex)
             {
@@ -75,21 +59,15 @@ namespace BTL_LTTQ.DAL
         {
             try
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    connection.Open();
-                    
-                    string query = "SELECT COUNT(*) FROM TaiKhoan WHERE TenDangNhap = @TenDangNhap";
-                    
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        command.Parameters.AddWithValue("@TenDangNhap", tenDangNhap);
-                        
-                        int count = (int)command.ExecuteScalar();
-                        
-                        return count > 0;
-                    }
-                }
+                string query = "SELECT COUNT(*) FROM TaiKhoan WHERE TenDangNhap = @TenDangNhap";
+                
+                SqlParameter[] parameters = {
+                    new SqlParameter("@TenDangNhap", tenDangNhap)
+                };
+                
+                int count = Convert.ToInt32(DatabaseConnection.ExecuteScalar(query, parameters));
+                
+                return count > 0;
             }
             catch (Exception ex)
             {
