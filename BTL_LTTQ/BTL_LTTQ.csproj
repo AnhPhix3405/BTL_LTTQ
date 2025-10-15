@@ -50,6 +50,7 @@
     <Compile Include="BLL\Session\UserSession.cs" />
     <Compile Include="DAL\DatabaseConnection.cs" />
     <Compile Include="DAL\Login\LoginDAL.cs" />
+    <Compile Include="DTO\Subject.cs" />
     <Compile Include="GUI\BaoCao.cs">
       <SubType>Form</SubType>
     </Compile>
