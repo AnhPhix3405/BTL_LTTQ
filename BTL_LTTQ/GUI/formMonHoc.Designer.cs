@@ -56,6 +56,10 @@
             this.label9 = new System.Windows.Forms.Label();
             this.tbTenMon = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbTietTH = new System.Windows.Forms.TextBox();
+            this.tbTietLT = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tbMaMon = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -162,7 +166,7 @@
             this.btnRefresh.Controls.Add(this.label20);
             this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRefresh.ForeColor = System.Drawing.Color.MistyRose;
-            this.btnRefresh.Location = new System.Drawing.Point(20, 226);
+            this.btnRefresh.Location = new System.Drawing.Point(29, 326);
             this.btnRefresh.Margin = new System.Windows.Forms.Padding(4);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(114, 45);
@@ -188,7 +192,7 @@
             this.btnXoa.Controls.Add(this.pictureBox3);
             this.btnXoa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnXoa.ForeColor = System.Drawing.Color.MistyRose;
-            this.btnXoa.Location = new System.Drawing.Point(180, 304);
+            this.btnXoa.Location = new System.Drawing.Point(180, 414);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(114, 45);
@@ -224,7 +228,7 @@
             this.btnSua.Controls.Add(this.pictureBox2);
             this.btnSua.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSua.ForeColor = System.Drawing.Color.MistyRose;
-            this.btnSua.Location = new System.Drawing.Point(180, 226);
+            this.btnSua.Location = new System.Drawing.Point(180, 326);
             this.btnSua.Margin = new System.Windows.Forms.Padding(4);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(114, 45);
@@ -271,7 +275,7 @@
             this.btnThem.Controls.Add(this.pictureBox1);
             this.btnThem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThem.ForeColor = System.Drawing.Color.MistyRose;
-            this.btnThem.Location = new System.Drawing.Point(20, 304);
+            this.btnThem.Location = new System.Drawing.Point(23, 414);
             this.btnThem.Margin = new System.Windows.Forms.Padding(4);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(114, 45);
@@ -373,6 +377,10 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.tbTietTH);
+            this.panel2.Controls.Add(this.tbTietLT);
             this.panel2.Controls.Add(this.btnRefresh);
             this.panel2.Controls.Add(this.btnXoa);
             this.panel2.Controls.Add(this.btnSua);
@@ -391,6 +399,44 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(377, 516);
             this.panel2.TabIndex = 10;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(16, 278);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(65, 20);
+            this.label7.TabIndex = 37;
+            this.label7.Text = "TietTH:";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(19, 232);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 20);
+            this.label2.TabIndex = 36;
+            this.label2.Text = "TietLT:";
+            this.label2.Click += new System.EventHandler(this.label2_Click_1);
+            // 
+            // tbTietTH
+            // 
+            this.tbTietTH.Location = new System.Drawing.Point(117, 276);
+            this.tbTietTH.Name = "tbTietTH";
+            this.tbTietTH.Size = new System.Drawing.Size(245, 22);
+            this.tbTietTH.TabIndex = 35;
+            // 
+            // tbTietLT
+            // 
+            this.tbTietLT.Location = new System.Drawing.Point(117, 230);
+            this.tbTietLT.Name = "tbTietLT";
+            this.tbTietLT.Size = new System.Drawing.Size(245, 22);
+            this.tbTietLT.TabIndex = 34;
             // 
             // label5
             // 
@@ -503,5 +549,9 @@
         private System.Windows.Forms.TextBox tbMaMon;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox tbTietTH;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label7;
+        public System.Windows.Forms.TextBox tbTietLT;
     }
 }
