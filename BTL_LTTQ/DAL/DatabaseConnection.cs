@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 namespace BTL_LTTQ.DAL
 {
     public class DatabaseConnection
-    {
+    {   
         private static string connectionString = @"Data Source=EMPHI\SQLEXPRESS;Initial Catalog=QL_GiangDay;Integrated Security=True";
         
         // Có thể thêm method để set connection string từ bên ngoài nếu cần
