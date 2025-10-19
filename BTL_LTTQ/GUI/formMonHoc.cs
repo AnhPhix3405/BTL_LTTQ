@@ -109,6 +109,7 @@ namespace BTL_LTTQ
                     SoTinChi = s.SoTC,
                     TietLyThuyết = s.TietLT,
                     TietThucHanh = s.TietTH,
+                    HeSoDiem = s.HeSoDiem,
                     MaKhoa = s.MaKhoa,
                     TenKhoa = s.TenKhoa
                 }).ToList();
@@ -123,6 +124,7 @@ namespace BTL_LTTQ
                     dgvSV.Columns["SoTinChi"].HeaderText = "Số TC";
                     dgvSV.Columns["TietLyThuyết"].HeaderText = "Tiết LT";
                     dgvSV.Columns["TietThucHanh"].HeaderText = "Tiết TH";
+                    dgvSV.Columns["HeSoDiem"].HeaderText = "Hệ Số Điểm";
                     dgvSV.Columns["MaKhoa"].HeaderText = "Mã Khoa";
                     dgvSV.Columns["TenKhoa"].HeaderText = "Tên Khoa";
                     
@@ -131,6 +133,7 @@ namespace BTL_LTTQ
                     dgvSV.Columns["SoTinChi"].Width = 70;
                     dgvSV.Columns["TietLyThuyết"].Width = 70;
                     dgvSV.Columns["TietThucHanh"].Width = 70;
+                    dgvSV.Columns["HeSoDiem"].Width = 80;
                     dgvSV.Columns["MaKhoa"].Width = 80;
                     dgvSV.Columns["TenKhoa"].Width = 150;
                 }

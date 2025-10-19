@@ -34,7 +34,7 @@ namespace BTL_LTTQ.DAL
         {
             try
             {
-                string query = "SELECT Id, TenDangNhap, LoaiTaiKhoan FROM TaiKhoan WHERE TenDangNhap = @TenDangNhap AND MatKhau = @MatKhau";
+                string query = "SELECT TenDangNhap, LoaiTaiKhoan FROM TaiKhoan WHERE TenDangNhap = @TenDangNhap AND MatKhau = @MatKhau";
                 
                 SqlParameter[] parameters = {
                     new SqlParameter("@TenDangNhap", tenDangNhap),

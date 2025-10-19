@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -14,7 +14,7 @@ namespace BTL_LTTQ.DAL.Subject
             List<DTO.Subject> subjects = new List<DTO.Subject>();
             try
             {
-                string query = @"SELECT mh.Id, mh.MaMH, mh.TenMH, mh.SoTC, mh.TietLT, mh.TietTH, mh.MaKhoa, k.TenKhoa 
+                string query = @"SELECT mh.MaMH, mh.TenMH, mh.SoTC, mh.TietLT, mh.TietTH, mh.HeSoDiem, mh.MaKhoa, k.TenKhoa 
                                 FROM MonHoc mh 
                                 LEFT JOIN Khoa k ON mh.MaKhoa = k.MaKhoa";
                 
@@ -24,14 +24,14 @@ namespace BTL_LTTQ.DAL.Subject
                 {
                     subjects.Add(new DTO.Subject
                     {
-                        Id = Convert.ToInt32(row["Id"]),
                         MaMH = row["MaMH"].ToString(),
                         TenMH = row["TenMH"].ToString(),
                         SoTC = Convert.ToInt32(row["SoTC"]),
                         TietLT = Convert.ToInt32(row["TietLT"]),
                         TietTH = Convert.ToInt32(row["TietTH"]),
+                        HeSoDiem = row["HeSoDiem"]?.ToString() ?? "",
                         MaKhoa = row["MaKhoa"].ToString(),
-                        TenKhoa = row["TenKhoa"].ToString()
+                        TenKhoa = row["TenKhoa"]?.ToString() ?? ""
                     });
                 }
             }
@@ -48,7 +48,7 @@ namespace BTL_LTTQ.DAL.Subject
         {
             try
             {
-                string query = @"SELECT mh.Id, mh.MaMH, mh.TenMH, mh.SoTC, mh.TietLT, mh.TietTH, mh.MaKhoa, k.TenKhoa 
+                string query = @"SELECT mh.MaMH, mh.TenMH, mh.SoTC, mh.TietLT, mh.TietTH, mh.HeSoDiem, mh.MaKhoa, k.TenKhoa 
                                 FROM MonHoc mh 
                                 LEFT JOIN Khoa k ON mh.MaKhoa = k.MaKhoa 
                                 WHERE mh.MaMH = @MaMH";
@@ -61,14 +61,14 @@ namespace BTL_LTTQ.DAL.Subject
                     DataRow row = dt.Rows[0];   
                     return new DTO.Subject
                     {
-                        Id = Convert.ToInt32(row["Id"]),
                         MaMH = row["MaMH"].ToString(),
                         TenMH = row["TenMH"].ToString(),
                         SoTC = Convert.ToInt32(row["SoTC"]),
                         TietLT = Convert.ToInt32(row["TietLT"]),
                         TietTH = Convert.ToInt32(row["TietTH"]),
+                        HeSoDiem = row["HeSoDiem"]?.ToString() ?? "",
                         MaKhoa = row["MaKhoa"].ToString(),
-                        TenKhoa = row["TenKhoa"].ToString()
+                        TenKhoa = row["TenKhoa"]?.ToString() ?? ""
                     };
                 }
                 
@@ -86,7 +86,7 @@ namespace BTL_LTTQ.DAL.Subject
             List<DTO.Subject> subjects = new List<DTO.Subject>();
             try
             {
-                string query = @"SELECT mh.Id, mh.MaMH, mh.TenMH, mh.SoTC, mh.TietLT, mh.TietTH, mh.MaKhoa, k.TenKhoa 
+                string query = @"SELECT mh.MaMH, mh.TenMH, mh.SoTC, mh.TietLT, mh.TietTH, mh.HeSoDiem, mh.MaKhoa, k.TenKhoa 
                                 FROM MonHoc mh 
                                 LEFT JOIN Khoa k ON mh.MaKhoa = k.MaKhoa 
                                 WHERE mh.TenMH LIKE @TenMH";
@@ -98,14 +98,14 @@ namespace BTL_LTTQ.DAL.Subject
                 {
                     subjects.Add(new DTO.Subject
                     {
-                        Id = Convert.ToInt32(row["Id"]),
                         MaMH = row["MaMH"].ToString(),
                         TenMH = row["TenMH"].ToString(),
                         SoTC = Convert.ToInt32(row["SoTC"]),
                         TietLT = Convert.ToInt32(row["TietLT"]),
                         TietTH = Convert.ToInt32(row["TietTH"]),
+                        HeSoDiem = row["HeSoDiem"]?.ToString() ?? "",
                         MaKhoa = row["MaKhoa"].ToString(),
-                        TenKhoa = row["TenKhoa"].ToString()
+                        TenKhoa = row["TenKhoa"]?.ToString() ?? ""
                     });
                 }
             }
@@ -121,12 +121,12 @@ namespace BTL_LTTQ.DAL.Subject
         public List<DTO.Subject> SearchSubjectsByCode(string maMH)
         {
             List<DTO.Subject> subjects = new List<DTO.Subject>();
-            try     
+            try
             {
-                string query = @"SELECT mh.Id, mh.MaMH, mh.TenMH, mh.SoTC, mh.TietLT, mh.TietTH, mh.MaKhoa, k.TenKhoa 
+                string query = @"SELECT mh.MaMH, mh.TenMH, mh.SoTC, mh.TietLT, mh.TietTH, mh.HeSoDiem, mh.MaKhoa, k.TenKhoa 
                                 FROM MonHoc mh 
                                 LEFT JOIN Khoa k ON mh.MaKhoa = k.MaKhoa 
-                                WHERE  mh.MaMH LIKE @MaMH";
+                                WHERE mh.MaMH LIKE @MaMH";
                 
                 SqlParameter[] parameters = { new SqlParameter("@MaMH", "%" + maMH + "%") };
                 DataTable dt = DatabaseConnection.ExecuteQuery(query, parameters);
@@ -135,14 +135,14 @@ namespace BTL_LTTQ.DAL.Subject
                 {
                     subjects.Add(new DTO.Subject
                     {
-                        Id = Convert.ToInt32(row["Id"]),
                         MaMH = row["MaMH"].ToString(),
                         TenMH = row["TenMH"].ToString(),
                         SoTC = Convert.ToInt32(row["SoTC"]),
                         TietLT = Convert.ToInt32(row["TietLT"]),
                         TietTH = Convert.ToInt32(row["TietTH"]),
+                        HeSoDiem = row["HeSoDiem"]?.ToString() ?? "",
                         MaKhoa = row["MaKhoa"].ToString(),
-                        TenKhoa = row["TenKhoa"].ToString()
+                        TenKhoa = row["TenKhoa"]?.ToString() ?? ""
                     });
                 }
             }
@@ -160,7 +160,7 @@ namespace BTL_LTTQ.DAL.Subject
             List<DTO.Subject> subjects = new List<DTO.Subject>();
             try
             {
-                string query = @"SELECT mh.Id, mh.MaMH, mh.TenMH, mh.SoTC, mh.TietLT, mh.TietTH, mh.MaKhoa, k.TenKhoa 
+                string query = @"SELECT mh.MaMH, mh.TenMH, mh.SoTC, mh.TietLT, mh.TietTH, mh.HeSoDiem, mh.MaKhoa, k.TenKhoa 
                                 FROM MonHoc mh 
                                 LEFT JOIN Khoa k ON mh.MaKhoa = k.MaKhoa 
                                 WHERE mh.MaKhoa = @MaKhoa";
@@ -172,14 +172,14 @@ namespace BTL_LTTQ.DAL.Subject
                 {
                     subjects.Add(new DTO.Subject
                     {
-                        Id = Convert.ToInt32(row["Id"]),
                         MaMH = row["MaMH"].ToString(),
                         TenMH = row["TenMH"].ToString(),
                         SoTC = Convert.ToInt32(row["SoTC"]),
                         TietLT = Convert.ToInt32(row["TietLT"]),
                         TietTH = Convert.ToInt32(row["TietTH"]),
+                        HeSoDiem = row["HeSoDiem"]?.ToString() ?? "",
                         MaKhoa = row["MaKhoa"].ToString(),
-                        TenKhoa = row["TenKhoa"].ToString()
+                        TenKhoa = row["TenKhoa"]?.ToString() ?? ""
                     });
                 }
             }
@@ -196,7 +196,7 @@ namespace BTL_LTTQ.DAL.Subject
         {
             try
             {
-                string query = "INSERT INTO MonHoc (MaMH, TenMH, SoTC, TietLT, TietTH, MaKhoa) VALUES (@MaMH, @TenMH, @SoTC, @TietLT, @TietTH, @MaKhoa)";
+                string query = "INSERT INTO MonHoc (MaMH, TenMH, SoTC, TietLT, TietTH, HeSoDiem, MaKhoa) VALUES (@MaMH, @TenMH, @SoTC, @TietLT, @TietTH, @HeSoDiem, @MaKhoa)";
                 
                 SqlParameter[] parameters = {
                     new SqlParameter("@MaMH", subject.MaMH),
@@ -204,6 +204,7 @@ namespace BTL_LTTQ.DAL.Subject
                     new SqlParameter("@SoTC", subject.SoTC),
                     new SqlParameter("@TietLT", subject.TietLT),
                     new SqlParameter("@TietTH", subject.TietTH),
+                    new SqlParameter("@HeSoDiem", subject.HeSoDiem ?? (object)DBNull.Value),
                     new SqlParameter("@MaKhoa", subject.MaKhoa)
                 };
                 
@@ -221,7 +222,7 @@ namespace BTL_LTTQ.DAL.Subject
         {
             try
             {
-                string query = "UPDATE MonHoc SET TenMH = @TenMH, SoTC = @SoTC, TietLT = @TietLT, TietTH = @TietTH, MaKhoa = @MaKhoa WHERE MaMH = @MaMH";
+                string query = "UPDATE MonHoc SET TenMH = @TenMH, SoTC = @SoTC, TietLT = @TietLT, TietTH = @TietTH, HeSoDiem = @HeSoDiem, MaKhoa = @MaKhoa WHERE MaMH = @MaMH";
                 
                 SqlParameter[] parameters = {
                     new SqlParameter("@MaMH", subject.MaMH),
@@ -229,6 +230,7 @@ namespace BTL_LTTQ.DAL.Subject
                     new SqlParameter("@SoTC", subject.SoTC),
                     new SqlParameter("@TietLT", subject.TietLT),
                     new SqlParameter("@TietTH", subject.TietTH),
+                    new SqlParameter("@HeSoDiem", subject.HeSoDiem ?? (object)DBNull.Value),
                     new SqlParameter("@MaKhoa", subject.MaKhoa)
                 };
                 
@@ -283,14 +285,13 @@ namespace BTL_LTTQ.DAL.Subject
             List<Department> departments = new List<Department>();
             try
             {
-                string query = "SELECT Id, MaKhoa, TenKhoa FROM Khoa";
+                string query = "SELECT MaKhoa, TenKhoa FROM Khoa";
                 DataTable dt = DatabaseConnection.ExecuteQuery(query);
                 
                 foreach (DataRow row in dt.Rows)
                 {
                     departments.Add(new Department
                     {
-                        Id = Convert.ToInt32(row["Id"]),
                         MaKhoa = row["MaKhoa"].ToString(),
                         TenKhoa = row["TenKhoa"].ToString()
                     });
