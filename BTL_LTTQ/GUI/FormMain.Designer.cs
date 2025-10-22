@@ -32,12 +32,12 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cáchSửDụngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelKhoi2 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.panelDiem = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panelKhoi = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelGiangVien = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -51,42 +51,43 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panelKhoi6 = new System.Windows.Forms.Panel();
-            this.panel14 = new System.Windows.Forms.Panel();
+            this.panelSinhVien = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panel15 = new System.Windows.Forms.Panel();
             this.panelKhoi5 = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
+            this.panelMonHoc = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panelKhoi4 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
+            this.paneLopTC = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panelKhoi3 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
+            this.panelPhanCongGiangVien = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.panelMain = new System.Windows.Forms.Panel();
             this.panelKhoi2.SuspendLayout();
-            this.panel6.SuspendLayout();
+            this.panelDiem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelKhoi.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.panelGiangVien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelKhoi6.SuspendLayout();
-            this.panel14.SuspendLayout();
+            this.panelSinhVien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.panelKhoi5.SuspendLayout();
-            this.panel12.SuspendLayout();
+            this.panelMonHoc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panelKhoi4.SuspendLayout();
-            this.panel10.SuspendLayout();
+            this.paneLopTC.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panelKhoi3.SuspendLayout();
-            this.panel8.SuspendLayout();
+            this.panelPhanCongGiangVien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,7 +108,7 @@
             // 
             // panelKhoi2
             // 
-            this.panelKhoi2.Controls.Add(this.panel6);
+            this.panelKhoi2.Controls.Add(this.panelDiem);
             this.panelKhoi2.Controls.Add(this.panel7);
             this.panelKhoi2.Location = new System.Drawing.Point(-1, 95);
             this.panelKhoi2.Margin = new System.Windows.Forms.Padding(4);
@@ -115,17 +116,17 @@
             this.panelKhoi2.Size = new System.Drawing.Size(309, 52);
             this.panelKhoi2.TabIndex = 7;
             // 
-            // panel6
+            // panelDiem
             // 
-            this.panel6.Controls.Add(this.label2);
-            this.panel6.Controls.Add(this.pictureBox2);
-            this.panel6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel6.Location = new System.Drawing.Point(0, 3);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(309, 49);
-            this.panel6.TabIndex = 3;
+            this.panelDiem.Controls.Add(this.label2);
+            this.panelDiem.Controls.Add(this.pictureBox2);
+            this.panelDiem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelDiem.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelDiem.Location = new System.Drawing.Point(0, 3);
+            this.panelDiem.Margin = new System.Windows.Forms.Padding(4);
+            this.panelDiem.Name = "panelDiem";
+            this.panelDiem.Size = new System.Drawing.Size(309, 49);
+            this.panelDiem.TabIndex = 3;
             // 
             // label2
             // 
@@ -164,7 +165,7 @@
             // 
             // panelKhoi
             // 
-            this.panelKhoi.Controls.Add(this.panel2);
+            this.panelKhoi.Controls.Add(this.panelGiangVien);
             this.panelKhoi.Controls.Add(this.panel5);
             this.panelKhoi.Location = new System.Drawing.Point(0, 146);
             this.panelKhoi.Margin = new System.Windows.Forms.Padding(4);
@@ -172,17 +173,17 @@
             this.panelKhoi.Size = new System.Drawing.Size(309, 52);
             this.panelKhoi.TabIndex = 6;
             // 
-            // panel2
+            // panelGiangVien
             // 
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 3);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(309, 49);
-            this.panel2.TabIndex = 3;
+            this.panelGiangVien.Controls.Add(this.label1);
+            this.panelGiangVien.Controls.Add(this.pictureBox1);
+            this.panelGiangVien.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelGiangVien.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelGiangVien.Location = new System.Drawing.Point(0, 3);
+            this.panelGiangVien.Margin = new System.Windows.Forms.Padding(4);
+            this.panelGiangVien.Name = "panelGiangVien";
+            this.panelGiangVien.Size = new System.Drawing.Size(309, 49);
+            this.panelGiangVien.TabIndex = 3;
             // 
             // label1
             // 
@@ -280,14 +281,14 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(68, 9);
+            this.label3.Location = new System.Drawing.Point(72, 12);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(209, 31);
+            this.label3.Size = new System.Drawing.Size(204, 24);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Lớp Hành Chính";
+            this.label3.Text = "Phân Công Giảng Viên";
             // 
             // panel1
             // 
@@ -318,7 +319,7 @@
             // 
             // panelKhoi6
             // 
-            this.panelKhoi6.Controls.Add(this.panel14);
+            this.panelKhoi6.Controls.Add(this.panelSinhVien);
             this.panelKhoi6.Controls.Add(this.panel15);
             this.panelKhoi6.Location = new System.Drawing.Point(0, 350);
             this.panelKhoi6.Margin = new System.Windows.Forms.Padding(4);
@@ -326,17 +327,17 @@
             this.panelKhoi6.Size = new System.Drawing.Size(309, 52);
             this.panelKhoi6.TabIndex = 11;
             // 
-            // panel14
+            // panelSinhVien
             // 
-            this.panel14.Controls.Add(this.label6);
-            this.panel14.Controls.Add(this.pictureBox6);
-            this.panel14.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel14.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel14.Location = new System.Drawing.Point(0, 3);
-            this.panel14.Margin = new System.Windows.Forms.Padding(4);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(309, 49);
-            this.panel14.TabIndex = 3;
+            this.panelSinhVien.Controls.Add(this.label6);
+            this.panelSinhVien.Controls.Add(this.pictureBox6);
+            this.panelSinhVien.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelSinhVien.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelSinhVien.Location = new System.Drawing.Point(0, 3);
+            this.panelSinhVien.Margin = new System.Windows.Forms.Padding(4);
+            this.panelSinhVien.Name = "panelSinhVien";
+            this.panelSinhVien.Size = new System.Drawing.Size(309, 49);
+            this.panelSinhVien.TabIndex = 3;
             // 
             // label6
             // 
@@ -374,7 +375,7 @@
             // 
             // panelKhoi5
             // 
-            this.panelKhoi5.Controls.Add(this.panel12);
+            this.panelKhoi5.Controls.Add(this.panelMonHoc);
             this.panelKhoi5.Controls.Add(this.panel13);
             this.panelKhoi5.Location = new System.Drawing.Point(0, 299);
             this.panelKhoi5.Margin = new System.Windows.Forms.Padding(4);
@@ -382,17 +383,17 @@
             this.panelKhoi5.Size = new System.Drawing.Size(309, 52);
             this.panelKhoi5.TabIndex = 10;
             // 
-            // panel12
+            // panelMonHoc
             // 
-            this.panel12.Controls.Add(this.label5);
-            this.panel12.Controls.Add(this.pictureBox5);
-            this.panel12.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel12.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel12.Location = new System.Drawing.Point(0, 3);
-            this.panel12.Margin = new System.Windows.Forms.Padding(4);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(309, 49);
-            this.panel12.TabIndex = 3;
+            this.panelMonHoc.Controls.Add(this.label5);
+            this.panelMonHoc.Controls.Add(this.pictureBox5);
+            this.panelMonHoc.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelMonHoc.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelMonHoc.Location = new System.Drawing.Point(0, 3);
+            this.panelMonHoc.Margin = new System.Windows.Forms.Padding(4);
+            this.panelMonHoc.Name = "panelMonHoc";
+            this.panelMonHoc.Size = new System.Drawing.Size(309, 49);
+            this.panelMonHoc.TabIndex = 3;
             // 
             // label5
             // 
@@ -430,7 +431,7 @@
             // 
             // panelKhoi4
             // 
-            this.panelKhoi4.Controls.Add(this.panel10);
+            this.panelKhoi4.Controls.Add(this.paneLopTC);
             this.panelKhoi4.Controls.Add(this.panel11);
             this.panelKhoi4.Location = new System.Drawing.Point(0, 249);
             this.panelKhoi4.Margin = new System.Windows.Forms.Padding(4);
@@ -438,17 +439,17 @@
             this.panelKhoi4.Size = new System.Drawing.Size(309, 52);
             this.panelKhoi4.TabIndex = 9;
             // 
-            // panel10
+            // paneLopTC
             // 
-            this.panel10.Controls.Add(this.label4);
-            this.panel10.Controls.Add(this.pictureBox4);
-            this.panel10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel10.Location = new System.Drawing.Point(0, 3);
-            this.panel10.Margin = new System.Windows.Forms.Padding(4);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(309, 49);
-            this.panel10.TabIndex = 3;
+            this.paneLopTC.Controls.Add(this.label4);
+            this.paneLopTC.Controls.Add(this.pictureBox4);
+            this.paneLopTC.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.paneLopTC.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.paneLopTC.Location = new System.Drawing.Point(0, 3);
+            this.paneLopTC.Margin = new System.Windows.Forms.Padding(4);
+            this.paneLopTC.Name = "paneLopTC";
+            this.paneLopTC.Size = new System.Drawing.Size(309, 49);
+            this.paneLopTC.TabIndex = 3;
             // 
             // label4
             // 
@@ -486,7 +487,7 @@
             // 
             // panelKhoi3
             // 
-            this.panelKhoi3.Controls.Add(this.panel8);
+            this.panelKhoi3.Controls.Add(this.panelPhanCongGiangVien);
             this.panelKhoi3.Controls.Add(this.panel9);
             this.panelKhoi3.Location = new System.Drawing.Point(0, 197);
             this.panelKhoi3.Margin = new System.Windows.Forms.Padding(4);
@@ -494,17 +495,17 @@
             this.panelKhoi3.Size = new System.Drawing.Size(309, 52);
             this.panelKhoi3.TabIndex = 8;
             // 
-            // panel8
+            // panelPhanCongGiangVien
             // 
-            this.panel8.Controls.Add(this.label3);
-            this.panel8.Controls.Add(this.pictureBox3);
-            this.panel8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel8.Location = new System.Drawing.Point(0, 3);
-            this.panel8.Margin = new System.Windows.Forms.Padding(4);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(309, 49);
-            this.panel8.TabIndex = 3;
+            this.panelPhanCongGiangVien.Controls.Add(this.label3);
+            this.panelPhanCongGiangVien.Controls.Add(this.pictureBox3);
+            this.panelPhanCongGiangVien.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelPhanCongGiangVien.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelPhanCongGiangVien.Location = new System.Drawing.Point(0, 3);
+            this.panelPhanCongGiangVien.Margin = new System.Windows.Forms.Padding(4);
+            this.panelPhanCongGiangVien.Name = "panelPhanCongGiangVien";
+            this.panelPhanCongGiangVien.Size = new System.Drawing.Size(309, 49);
+            this.panelPhanCongGiangVien.TabIndex = 3;
             // 
             // pictureBox3
             // 
@@ -518,41 +519,50 @@
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
             // 
+            // panelMain
+            // 
+            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMain.Location = new System.Drawing.Point(309, 31);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Size = new System.Drawing.Size(1518, 709);
+            this.panelMain.TabIndex = 4;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1827, 740);
+            this.Controls.Add(this.panelMain);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panel1);
             this.Name = "FormMain";
             this.Text = "Quản Lý Điểm Sinh Viên";
             this.panelKhoi2.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
+            this.panelDiem.ResumeLayout(false);
+            this.panelDiem.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelKhoi.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.panelGiangVien.ResumeLayout(false);
+            this.panelGiangVien.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panelKhoi6.ResumeLayout(false);
-            this.panel14.ResumeLayout(false);
-            this.panel14.PerformLayout();
+            this.panelSinhVien.ResumeLayout(false);
+            this.panelSinhVien.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.panelKhoi5.ResumeLayout(false);
-            this.panel12.ResumeLayout(false);
-            this.panel12.PerformLayout();
+            this.panelMonHoc.ResumeLayout(false);
+            this.panelMonHoc.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.panelKhoi4.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
+            this.paneLopTC.ResumeLayout(false);
+            this.paneLopTC.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panelKhoi3.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
+            this.panelPhanCongGiangVien.ResumeLayout(false);
+            this.panelPhanCongGiangVien.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -564,12 +574,12 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cáchSửDụngToolStripMenuItem;
         private System.Windows.Forms.Panel panelKhoi2;
-        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panelDiem;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panelKhoi;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelGiangVien;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel5;
@@ -583,22 +593,23 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panelKhoi6;
-        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Panel panelSinhVien;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Panel panelKhoi5;
-        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Panel panelMonHoc;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Panel panelKhoi4;
-        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel paneLopTC;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panelKhoi3;
-        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panelPhanCongGiangVien;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Panel panelMain;
     }
 }
