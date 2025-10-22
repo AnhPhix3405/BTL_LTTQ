@@ -46,12 +46,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\Diem\DiemBLL.cs" />
     <Compile Include="BLL\Login\LoginBLL.cs" />
     <Compile Include="BLL\Session\UserSession.cs" />
     <Compile Include="BLL\Subject\SubjectBLL.cs" />
     <Compile Include="DAL\DatabaseConnection.cs" />
+    <Compile Include="DAL\Diem\DiemDAL.cs" />
     <Compile Include="DAL\Login\LoginDAL.cs" />
     <Compile Include="DAL\Subject\SubjectDAL.cs" />
+    <Compile Include="DTO\Score.cs" />
     <Compile Include="DTO\Subject.cs" />
     <Compile Include="GUI\BaoCao.cs">
       <SubType>Form</SubType>
