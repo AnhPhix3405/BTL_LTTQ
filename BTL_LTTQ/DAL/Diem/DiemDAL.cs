@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BTL_LTTQ.DTO;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -10,7 +11,7 @@ namespace BTL_LTTQ.DAL.Diem
 {
     internal class DiemDAL
     {
-        private string connectionString = "Data Source=LAPTOP-LHTIMU8S;Initial Catalog=QuanLySanPham;Integrated Security=True;";
+        private string connectionString = "Data Source=LAPTOP-LHTIMU8S;Initial Catalog=QL_GiangDay;Integrated Security=True;";
         private SqlConnection GetConnection()
         {
             return new SqlConnection(connectionString);
@@ -25,7 +26,7 @@ namespace BTL_LTTQ.DAL.Diem
                 return dt;
             }
         }
-        public bool Insert(Diem diem)
+        public bool Insert(Score diem)
         {
             using (SqlConnection conn = GetConnection())
             {
@@ -40,36 +41,45 @@ namespace BTL_LTTQ.DAL.Diem
                 return cmd.ExecuteNonQuery() > 0;
             }
         }
-        public bool Update(Diem diem)//chua fix
+
+        public bool Update(Score diem)
         {
             using (SqlConnection conn = GetConnection())
             {
-                string query = "UPDATE SanPham SET DiemCc = @DiemCc, DiemGK=@DiemGK, DiemThi=@DiemThi WHERE MaSV = @MaSV";
+                string query = "UPDATE Diem SET DiemChuyenCan = @DiemChuyenCan, DiemGiuaKy = @DiemGiuaKy, DiemThi = @DiemThi WHERE MaLop = @MaLop AND MaSV = @MaSV";
                 SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@DiemCc", diem.DiemCc);
-                cmd.Parameters.AddWithValue("@DiemGK", diem.DiemGK);
+
+                cmd.Parameters.AddWithValue("@DiemChuyenCan", diem.DiemCc);
+                cmd.Parameters.AddWithValue("@DiemGiuaKy", diem.DiemGK);
                 cmd.Parameters.AddWithValue("@DiemThi", diem.DiemThi);
+
+                // Them tham so cho dieu kien WHERE
+                cmd.Parameters.AddWithValue("@MaLop", diem.MaLop);
+                cmd.Parameters.AddWithValue("@MaSV", diem.MaSV);
+
                 conn.Open();
                 return cmd.ExecuteNonQuery() > 0;
             }
         }
-        public bool Delete(string MaSV)
+        public bool Delete(string MaSV,string MaLop)
         {
             using (SqlConnection conn = GetConnection())
             {
-                string query = "DELETE FROM Diem WHERE MaSV = @MaSV";
+                string query = "DELETE FROM Diem WHERE MaLop = @MaLop AND MaSV = @MaSV";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@MaSV", MaSV);
+                cmd.Parameters.AddWithValue("@MaLop", MaLop);
                 conn.Open();
                 return cmd.ExecuteNonQuery() > 0;
             }
         }
-        public bool CheckExist(string MaSV)
+        public bool CheckExist(string MaLop, string MaSV)
         {
             using (SqlConnection conn = GetConnection())
             {
-                string query = "SELECT COUNT(*) FROM Diem WHERE MaSV = @MaSV";
+                string query = "SELECT COUNT(*) FROM Diem WHERE MaLop = @MaLop AND MaSV = @MaSV";
                 SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@MaLop", MaLop);
                 cmd.Parameters.AddWithValue("@MaSV", MaSV);
                 conn.Open();
                 int count = (int)cmd.ExecuteScalar();

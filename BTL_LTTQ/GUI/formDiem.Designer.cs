@@ -33,33 +33,35 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnTatCa = new System.Windows.Forms.Button();
             this.btnTimKiem = new System.Windows.Forms.Button();
-            this.tbTimKiemTheoMa = new System.Windows.Forms.TextBox();
+            this.txtTimKiemTheoMa = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.tbMaSV = new System.Windows.Forms.TextBox();
+            this.txtMaSV = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.tbDiemCC = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
+            this.txtDiemCC = new System.Windows.Forms.TextBox();
+            this.btn_ThemDiem = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnThem = new System.Windows.Forms.Panel();
-            this.label18 = new System.Windows.Forms.Label();
+            this.btn_SuaDiem = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label19 = new System.Windows.Forms.Label();
+            this.btn_XoaDiem = new System.Windows.Forms.Label();
             this.btnXoa = new System.Windows.Forms.Panel();
-            this.label20 = new System.Windows.Forms.Label();
-            this.tbDiemGK = new System.Windows.Forms.TextBox();
-            this.tbDiemThi = new System.Windows.Forms.TextBox();
+            this.btn_LamMoiDiem = new System.Windows.Forms.Label();
+            this.txtDiemGK = new System.Windows.Forms.TextBox();
+            this.txtDiemThi = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btnRefresh = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnSua = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.tbMaLop = new System.Windows.Forms.TextBox();
+            this.txtMaLop = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvDiem = new System.Windows.Forms.DataGridView();
+            this.txtTenSV = new System.Windows.Forms.TextBox();
+            this.lable21 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.btnThem.SuspendLayout();
@@ -88,7 +90,7 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.btnTatCa);
             this.panel1.Controls.Add(this.btnTimKiem);
-            this.panel1.Controls.Add(this.tbTimKiemTheoMa);
+            this.panel1.Controls.Add(this.txtTimKiemTheoMa);
             this.panel1.Location = new System.Drawing.Point(418, 62);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
@@ -122,16 +124,16 @@
             this.btnTimKiem.Text = "Tìm";
             this.btnTimKiem.UseVisualStyleBackColor = false;
             // 
-            // tbTimKiemTheoMa
+            // txtTimKiemTheoMa
             // 
-            this.tbTimKiemTheoMa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTimKiemTheoMa.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.tbTimKiemTheoMa.Location = new System.Drawing.Point(37, 25);
-            this.tbTimKiemTheoMa.Margin = new System.Windows.Forms.Padding(4);
-            this.tbTimKiemTheoMa.Name = "tbTimKiemTheoMa";
-            this.tbTimKiemTheoMa.Size = new System.Drawing.Size(256, 26);
-            this.tbTimKiemTheoMa.TabIndex = 0;
-            this.tbTimKiemTheoMa.Text = "nhập mã lớp";
+            this.txtTimKiemTheoMa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTimKiemTheoMa.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.txtTimKiemTheoMa.Location = new System.Drawing.Point(37, 25);
+            this.txtTimKiemTheoMa.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTimKiemTheoMa.Name = "txtTimKiemTheoMa";
+            this.txtTimKiemTheoMa.Size = new System.Drawing.Size(256, 26);
+            this.txtTimKiemTheoMa.TabIndex = 0;
+            this.txtTimKiemTheoMa.Text = "nhập mã lớp";
             // 
             // label6
             // 
@@ -165,46 +167,46 @@
             this.label11.TabIndex = 12;
             this.label11.Text = "Mã SV:";
             // 
-            // tbMaSV
+            // txtMaSV
             // 
-            this.tbMaSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMaSV.Location = new System.Drawing.Point(117, 75);
-            this.tbMaSV.Margin = new System.Windows.Forms.Padding(4);
-            this.tbMaSV.Name = "tbMaSV";
-            this.tbMaSV.Size = new System.Drawing.Size(245, 26);
-            this.tbMaSV.TabIndex = 13;
+            this.txtMaSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaSV.Location = new System.Drawing.Point(117, 75);
+            this.txtMaSV.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMaSV.Name = "txtMaSV";
+            this.txtMaSV.Size = new System.Drawing.Size(245, 26);
+            this.txtMaSV.TabIndex = 13;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(19, 127);
+            this.label9.Location = new System.Drawing.Point(19, 171);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(149, 20);
             this.label9.TabIndex = 8;
             this.label9.Text = "Điểm Chuyên Cần:";
             // 
-            // tbDiemCC
+            // txtDiemCC
             // 
-            this.tbDiemCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDiemCC.Location = new System.Drawing.Point(193, 123);
-            this.tbDiemCC.Margin = new System.Windows.Forms.Padding(4);
-            this.tbDiemCC.Name = "tbDiemCC";
-            this.tbDiemCC.Size = new System.Drawing.Size(169, 26);
-            this.tbDiemCC.TabIndex = 9;
-            this.tbDiemCC.Text = "0";
+            this.txtDiemCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDiemCC.Location = new System.Drawing.Point(193, 165);
+            this.txtDiemCC.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDiemCC.Name = "txtDiemCC";
+            this.txtDiemCC.Size = new System.Drawing.Size(169, 26);
+            this.txtDiemCC.TabIndex = 9;
+            this.txtDiemCC.Text = "0";
             // 
-            // label15
+            // btn_ThemDiem
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(45, 10);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(63, 25);
-            this.label15.TabIndex = 23;
-            this.label15.Text = "Thêm";
+            this.btn_ThemDiem.AutoSize = true;
+            this.btn_ThemDiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ThemDiem.Location = new System.Drawing.Point(45, 10);
+            this.btn_ThemDiem.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.btn_ThemDiem.Name = "btn_ThemDiem";
+            this.btn_ThemDiem.Size = new System.Drawing.Size(63, 25);
+            this.btn_ThemDiem.TabIndex = 23;
+            this.btn_ThemDiem.Text = "Thêm";
             // 
             // pictureBox1
             // 
@@ -221,26 +223,26 @@
             // 
             this.btnThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(71)))));
             this.btnThem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btnThem.Controls.Add(this.label15);
+            this.btnThem.Controls.Add(this.btn_ThemDiem);
             this.btnThem.Controls.Add(this.pictureBox1);
             this.btnThem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThem.ForeColor = System.Drawing.Color.MistyRose;
-            this.btnThem.Location = new System.Drawing.Point(23, 378);
+            this.btnThem.Location = new System.Drawing.Point(50, 406);
             this.btnThem.Margin = new System.Windows.Forms.Padding(4);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(114, 45);
             this.btnThem.TabIndex = 27;
             // 
-            // label18
+            // btn_SuaDiem
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(45, 10);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(48, 25);
-            this.label18.TabIndex = 23;
-            this.label18.Text = "Sửa";
+            this.btn_SuaDiem.AutoSize = true;
+            this.btn_SuaDiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_SuaDiem.Location = new System.Drawing.Point(45, 10);
+            this.btn_SuaDiem.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.btn_SuaDiem.Name = "btn_SuaDiem";
+            this.btn_SuaDiem.Size = new System.Drawing.Size(48, 25);
+            this.btn_SuaDiem.TabIndex = 23;
+            this.btn_SuaDiem.Text = "Sửa";
             // 
             // pictureBox3
             // 
@@ -264,68 +266,69 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // label19
+            // btn_XoaDiem
             // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(45, 10);
-            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(48, 25);
-            this.label19.TabIndex = 23;
-            this.label19.Text = "Xóa";
+            this.btn_XoaDiem.AutoSize = true;
+            this.btn_XoaDiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_XoaDiem.Location = new System.Drawing.Point(45, 10);
+            this.btn_XoaDiem.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.btn_XoaDiem.Name = "btn_XoaDiem";
+            this.btn_XoaDiem.Size = new System.Drawing.Size(48, 25);
+            this.btn_XoaDiem.TabIndex = 23;
+            this.btn_XoaDiem.Text = "Xóa";
             // 
             // btnXoa
             // 
             this.btnXoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(33)))), ((int)(((byte)(48)))));
             this.btnXoa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btnXoa.Controls.Add(this.label19);
+            this.btnXoa.Controls.Add(this.btn_XoaDiem);
             this.btnXoa.Controls.Add(this.pictureBox3);
             this.btnXoa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnXoa.ForeColor = System.Drawing.Color.MistyRose;
-            this.btnXoa.Location = new System.Drawing.Point(183, 378);
+            this.btnXoa.Location = new System.Drawing.Point(210, 406);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(114, 45);
             this.btnXoa.TabIndex = 29;
             // 
-            // label20
+            // btn_LamMoiDiem
             // 
-            this.label20.AutoSize = true;
-            this.label20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(7, 10);
-            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(86, 25);
-            this.label20.TabIndex = 23;
-            this.label20.Text = "Làm mới";
+            this.btn_LamMoiDiem.AutoSize = true;
+            this.btn_LamMoiDiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_LamMoiDiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_LamMoiDiem.Location = new System.Drawing.Point(7, 10);
+            this.btn_LamMoiDiem.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.btn_LamMoiDiem.Name = "btn_LamMoiDiem";
+            this.btn_LamMoiDiem.Size = new System.Drawing.Size(86, 25);
+            this.btn_LamMoiDiem.TabIndex = 23;
+            this.btn_LamMoiDiem.Text = "Làm mới";
             // 
-            // tbDiemGK
+            // txtDiemGK
             // 
-            this.tbDiemGK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDiemGK.Location = new System.Drawing.Point(193, 176);
-            this.tbDiemGK.Margin = new System.Windows.Forms.Padding(4);
-            this.tbDiemGK.Name = "tbDiemGK";
-            this.tbDiemGK.Size = new System.Drawing.Size(169, 26);
-            this.tbDiemGK.TabIndex = 36;
-            this.tbDiemGK.Text = "0";
+            this.txtDiemGK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDiemGK.Location = new System.Drawing.Point(193, 210);
+            this.txtDiemGK.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDiemGK.Name = "txtDiemGK";
+            this.txtDiemGK.Size = new System.Drawing.Size(169, 26);
+            this.txtDiemGK.TabIndex = 36;
+            this.txtDiemGK.Text = "0";
             // 
-            // tbDiemThi
+            // txtDiemThi
             // 
-            this.tbDiemThi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDiemThi.Location = new System.Drawing.Point(193, 224);
-            this.tbDiemThi.Margin = new System.Windows.Forms.Padding(4);
-            this.tbDiemThi.Name = "tbDiemThi";
-            this.tbDiemThi.Size = new System.Drawing.Size(169, 26);
-            this.tbDiemThi.TabIndex = 35;
-            this.tbDiemThi.Text = "0";
+            this.txtDiemThi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDiemThi.Location = new System.Drawing.Point(193, 261);
+            this.txtDiemThi.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDiemThi.Name = "txtDiemThi";
+            this.txtDiemThi.Size = new System.Drawing.Size(169, 26);
+            this.txtDiemThi.TabIndex = 35;
+            this.txtDiemThi.Text = "0";
+            this.txtDiemThi.TextChanged += new System.EventHandler(this.txtDiemThi_TextChanged);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(19, 177);
+            this.label8.Location = new System.Drawing.Point(19, 216);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(117, 20);
@@ -336,7 +339,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(19, 229);
+            this.label7.Location = new System.Drawing.Point(19, 264);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(81, 20);
@@ -347,10 +350,10 @@
             // 
             this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(109)))), ((int)(((byte)(226)))));
             this.btnRefresh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btnRefresh.Controls.Add(this.label20);
+            this.btnRefresh.Controls.Add(this.btn_LamMoiDiem);
             this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRefresh.ForeColor = System.Drawing.Color.MistyRose;
-            this.btnRefresh.Location = new System.Drawing.Point(23, 300);
+            this.btnRefresh.Location = new System.Drawing.Point(50, 328);
             this.btnRefresh.Margin = new System.Windows.Forms.Padding(4);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(114, 45);
@@ -359,8 +362,10 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.tbDiemGK);
-            this.panel2.Controls.Add(this.tbDiemThi);
+            this.panel2.Controls.Add(this.lable21);
+            this.panel2.Controls.Add(this.txtTenSV);
+            this.panel2.Controls.Add(this.txtDiemGK);
+            this.panel2.Controls.Add(this.txtDiemThi);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.btnRefresh);
@@ -369,11 +374,11 @@
             this.panel2.Controls.Add(this.btnThem);
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.tbMaSV);
+            this.panel2.Controls.Add(this.txtMaSV);
             this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.tbDiemCC);
+            this.panel2.Controls.Add(this.txtDiemCC);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.tbMaLop);
+            this.panel2.Controls.Add(this.txtMaLop);
             this.panel2.Location = new System.Drawing.Point(13, 158);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
@@ -384,11 +389,11 @@
             // 
             this.btnSua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(158)))), ((int)(((byte)(0)))));
             this.btnSua.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btnSua.Controls.Add(this.label18);
+            this.btnSua.Controls.Add(this.btn_SuaDiem);
             this.btnSua.Controls.Add(this.pictureBox2);
             this.btnSua.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSua.ForeColor = System.Drawing.Color.MistyRose;
-            this.btnSua.Location = new System.Drawing.Point(183, 300);
+            this.btnSua.Location = new System.Drawing.Point(210, 328);
             this.btnSua.Margin = new System.Windows.Forms.Padding(4);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(114, 45);
@@ -405,14 +410,14 @@
             this.label5.TabIndex = 2;
             this.label5.Text = "Mã Lớp:";
             // 
-            // tbMaLop
+            // txtMaLop
             // 
-            this.tbMaLop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMaLop.Location = new System.Drawing.Point(117, 25);
-            this.tbMaLop.Margin = new System.Windows.Forms.Padding(4);
-            this.tbMaLop.Name = "tbMaLop";
-            this.tbMaLop.Size = new System.Drawing.Size(245, 26);
-            this.tbMaLop.TabIndex = 3;
+            this.txtMaLop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaLop.Location = new System.Drawing.Point(117, 25);
+            this.txtMaLop.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMaLop.Name = "txtMaLop";
+            this.txtMaLop.Size = new System.Drawing.Size(245, 26);
+            this.txtMaLop.TabIndex = 3;
             // 
             // label1
             // 
@@ -429,12 +434,32 @@
             // dgvDiem
             // 
             this.dgvDiem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDiem.Location = new System.Drawing.Point(418, 158);
+            this.dgvDiem.Location = new System.Drawing.Point(418, 159);
             this.dgvDiem.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDiem.Name = "dgvDiem";
             this.dgvDiem.RowHeadersWidth = 51;
             this.dgvDiem.Size = new System.Drawing.Size(1037, 517);
             this.dgvDiem.TabIndex = 11;
+            // 
+            // txtTenSV
+            // 
+            this.txtTenSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenSV.Location = new System.Drawing.Point(117, 122);
+            this.txtTenSV.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTenSV.Name = "txtTenSV";
+            this.txtTenSV.Size = new System.Drawing.Size(245, 26);
+            this.txtTenSV.TabIndex = 14;
+            // 
+            // lable21
+            // 
+            this.lable21.AutoSize = true;
+            this.lable21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lable21.Location = new System.Drawing.Point(19, 122);
+            this.lable21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lable21.Name = "lable21";
+            this.lable21.Size = new System.Drawing.Size(69, 20);
+            this.lable21.TabIndex = 13;
+            this.lable21.Text = "Tên SV:";
             // 
             // formDiem
             // 
@@ -477,32 +502,34 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnTatCa;
         private System.Windows.Forms.Button btnTimKiem;
-        private System.Windows.Forms.TextBox tbTimKiemTheoMa;
+        private System.Windows.Forms.TextBox txtTimKiemTheoMa;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox tbMaSV;
+        private System.Windows.Forms.TextBox txtMaSV;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox tbDiemCC;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox txtDiemCC;
+        private System.Windows.Forms.Label btn_ThemDiem;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel btnThem;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label btn_SuaDiem;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label btn_XoaDiem;
         private System.Windows.Forms.Panel btnXoa;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox tbDiemGK;
-        private System.Windows.Forms.TextBox tbDiemThi;
+        private System.Windows.Forms.Label btn_LamMoiDiem;
+        private System.Windows.Forms.TextBox txtDiemGK;
+        private System.Windows.Forms.TextBox txtDiemThi;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel btnRefresh;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel btnSua;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox tbMaLop;
+        private System.Windows.Forms.TextBox txtMaLop;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvDiem;
+        private System.Windows.Forms.Label lable21;
+        private System.Windows.Forms.TextBox txtTenSV;
     }
 }
