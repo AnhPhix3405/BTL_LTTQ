@@ -294,6 +294,7 @@
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(114, 45);
             this.btnRefresh.TabIndex = 31;
+            this.btnRefresh.Paint += new System.Windows.Forms.PaintEventHandler(this.btnRefresh_Paint);
             // 
             // label20
             // 
@@ -320,6 +321,7 @@
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(114, 45);
             this.btnXoa.TabIndex = 29;
+            this.btnXoa.Click += new System.EventHandler(this.BtnXoa_Click);
             // 
             // label19
             // 

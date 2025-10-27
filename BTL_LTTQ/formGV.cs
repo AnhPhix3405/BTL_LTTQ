@@ -26,46 +26,41 @@ namespace BTL_LTTQ
 
         private void formGV_Load(object sender, EventArgs e)
         {
-            dgvGV.DataSource = processDatabase.DocBang("SELECT * FROM GiangVien");
-
-            dgvGV.Columns[0].HeaderText = "Tên Giảng viên";
-            dgvGV.Columns[1].HeaderText = "Mã Giảng viên";
-            dgvGV.Columns[2].HeaderText = "Tên Giảng viên";
-            dgvGV.Columns[3].HeaderText = "Học vi";
-            dgvGV.Columns[4].HeaderText = "Mã khoa";
-            dgvGV.Columns[5].HeaderText = "Mã TK";
-
-
-            dgvGV.Columns[0].Width = 100;
-            dgvGV.Columns[1].Width = 200;
-            dgvGV.Columns[2].Width = 200;
-            dgvGV.Columns[3].Width = 200;
-            dgvGV.Columns[4].Width = 200;
-            dgvGV.Columns[5].Width = 100;
-
-            dgvGV.BackgroundColor = Color.LightBlue;
-
-            btnXoa.Enabled = false;
-            btnSua.Enabled = false;
-            btnThem.Enabled = true;
+            HienThiDuLieuGiangVien(); // load 1 lần chuẩn
+            ResetValue();
         }
 
         private void BtnXoa_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có muốn xóa sản phẩm có mã: " + tbMaGV.Text + " không?",
+            if (MessageBox.Show("Bạn có muốn xóa giảng viên có mã: " + tbMaGV.Text + " không?",
                 "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                processDatabase.CapNhatDuLieu(
-                    "DELETE FROM GiangVien WHERE MaGV = '" + tbMaGV.Text + "'");
+                try
+                {
+                    string sql = "DELETE FROM GiangVien WHERE MaGV = '" + tbMaGV.Text.Trim() + "'";
+                    processDatabase.CapNhatDuLieu(sql);
 
-                dgvGV.DataSource = processDatabase.DocBang("SELECT * FROM SanPham");
-                ResetValue();
+                    // Refresh lại grid
+                    HienThiDuLieuGiangVien();
+                    ResetValue();
 
-                btnXoa.Enabled = false;
-                btnSua.Enabled = false;
-                btnThem.Enabled = true;
+                    MessageBox.Show("Xóa giảng viên thành công!", "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (System.Data.SqlClient.SqlException sqlEx)
+                {
+                    if (sqlEx.Number == 547)
+                        MessageBox.Show("Không thể xóa do ràng buộc khóa ngoại.", "Lỗi Khóa Ngoại");
+                    else
+                        MessageBox.Show("Lỗi SQL: " + sqlEx.Message);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message);
+                }
             }
         }
+
 
         private void tbTimKiemTheoTen_TextChanged(object sender, EventArgs e)
         {
@@ -109,7 +104,33 @@ namespace BTL_LTTQ
         {
             tbMaGV.Text = "";
             tbHoTenGV.Text = "";
+            // Thêm reset cho các trường khác nếu bạn muốn (Ngaysinh, DiaChi, Email,...)
             tbMaGV.Enabled = true;
+
+            // Thiết lập lại trạng thái nút
+            btnThem.Enabled = true;
+            btnSua.Enabled = false;
+            btnXoa.Enabled = false;
+        }
+
+        private void HienThiDuLieuGiangVien(string filter = "")
+        {
+            string sql = "SELECT * FROM GiangVien";
+            if (!string.IsNullOrEmpty(filter))
+                sql += " WHERE " + filter;
+
+            DataTable dt = processDatabase.DocBang(sql);
+            dgvGV.DataSource = dt;
+
+            if (dgvGV.Columns.Count >= 6)
+            {
+                dgvGV.Columns[0].HeaderText = "ID";
+                dgvGV.Columns[1].HeaderText = "Mã GV";
+                dgvGV.Columns[2].HeaderText = "Tên GV";
+                dgvGV.Columns[3].HeaderText = "Học vị";
+                dgvGV.Columns[4].HeaderText = "Mã Khoa";
+                dgvGV.Columns[5].HeaderText = "Mã TK";
+            }
         }
 
 
@@ -137,6 +158,9 @@ namespace BTL_LTTQ
             }
         }
 
-        
+        private void btnRefresh_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

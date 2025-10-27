@@ -3,23 +3,71 @@
   "WorkspaceRootPath": "E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AF75C263-459C-415B-ABA0-777FC979B095}|BTL_LTTQ.csproj|e:\\lttq\\btl_lttq\\btl_lttq\\formgv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{AF75C263-459C-415B-ABA0-777FC979B095}|BTL_LTTQ.csproj|E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\formgv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{AF75C263-459C-415B-ABA0-777FC979B095}|BTL_LTTQ.csproj|solutionrelative:formgv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AF75C263-459C-415B-ABA0-777FC979B095}|BTL_LTTQ.csproj|e:\\lttq\\btl_lttq\\btl_lttq\\formgv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AF75C263-459C-415B-ABA0-777FC979B095}|BTL_LTTQ.csproj|E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\formgv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AF75C263-459C-415B-ABA0-777FC979B095}|BTL_LTTQ.csproj|solutionrelative:formgv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AF75C263-459C-415B-ABA0-777FC979B095}|BTL_LTTQ.csproj|e:\\lttq\\btl_lttq\\btl_lttq\\processdatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AF75C263-459C-415B-ABA0-777FC979B095}|BTL_LTTQ.csproj|e:\\lttq\\btl_lttq\\btl_lttq\\formloptc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{AF75C263-459C-415B-ABA0-777FC979B095}|BTL_LTTQ.csproj|solutionrelative:formloptc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF75C263-459C-415B-ABA0-777FC979B095}|BTL_LTTQ.csproj|E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\formdiem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{AF75C263-459C-415B-ABA0-777FC979B095}|BTL_LTTQ.csproj|solutionrelative:formdiem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF75C263-459C-415B-ABA0-777FC979B095}|BTL_LTTQ.csproj|E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\formmonhoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{AF75C263-459C-415B-ABA0-777FC979B095}|BTL_LTTQ.csproj|solutionrelative:formmonhoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF75C263-459C-415B-ABA0-777FC979B095}|BTL_LTTQ.csproj|E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\formsv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{AF75C263-459C-415B-ABA0-777FC979B095}|BTL_LTTQ.csproj|solutionrelative:formsv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF75C263-459C-415B-ABA0-777FC979B095}|BTL_LTTQ.csproj|E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\baocao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{AF75C263-459C-415B-ABA0-777FC979B095}|BTL_LTTQ.csproj|solutionrelative:baocao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF75C263-459C-415B-ABA0-777FC979B095}|BTL_LTTQ.csproj|E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{AF75C263-459C-415B-ABA0-777FC979B095}|BTL_LTTQ.csproj|solutionrelative:login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF75C263-459C-415B-ABA0-777FC979B095}|BTL_LTTQ.csproj|E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\loadthu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{AF75C263-459C-415B-ABA0-777FC979B095}|BTL_LTTQ.csproj|solutionrelative:loadthu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF75C263-459C-415B-ABA0-777FC979B095}|BTL_LTTQ.csproj|E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\loading.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{AF75C263-459C-415B-ABA0-777FC979B095}|BTL_LTTQ.csproj|solutionrelative:loading.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF75C263-459C-415B-ABA0-777FC979B095}|BTL_LTTQ.csproj|E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\inbaocao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{AF75C263-459C-415B-ABA0-777FC979B095}|BTL_LTTQ.csproj|solutionrelative:inbaocao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF75C263-459C-415B-ABA0-777FC979B095}|BTL_LTTQ.csproj|E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\formmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{AF75C263-459C-415B-ABA0-777FC979B095}|BTL_LTTQ.csproj|solutionrelative:formmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF75C263-459C-415B-ABA0-777FC979B095}|BTL_LTTQ.csproj|E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\formlophp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{AF75C263-459C-415B-ABA0-777FC979B095}|BTL_LTTQ.csproj|solutionrelative:formlophp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF75C263-459C-415B-ABA0-777FC979B095}|BTL_LTTQ.csproj|E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{AF75C263-459C-415B-ABA0-777FC979B095}|BTL_LTTQ.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF75C263-459C-415B-ABA0-777FC979B095}|BTL_LTTQ.csproj|E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\processdatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AF75C263-459C-415B-ABA0-777FC979B095}|BTL_LTTQ.csproj|solutionrelative:processdatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AF75C263-459C-415B-ABA0-777FC979B095}|BTL_LTTQ.csproj|e:\\lttq\\btl_lttq\\btl_lttq\\formgv.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AF75C263-459C-415B-ABA0-777FC979B095}|BTL_LTTQ.csproj|E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\formgv.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AF75C263-459C-415B-ABA0-777FC979B095}|BTL_LTTQ.csproj|solutionrelative:formgv.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AF75C263-459C-415B-ABA0-777FC979B095}|BTL_LTTQ.csproj|e:\\lttq\\btl_lttq\\btl_lttq\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AF75C263-459C-415B-ABA0-777FC979B095}|BTL_LTTQ.csproj|E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AF75C263-459C-415B-ABA0-777FC979B095}|BTL_LTTQ.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -30,8 +78,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 20,
+          "SelectedChildIndex": 32,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-05T16:51:57.361Z",
+              "IsPinned": true
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
@@ -47,14 +108,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Bookmark",
@@ -97,27 +150,167 @@
               "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Login.cs [Design]",
+              "DocumentMoniker": "E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\Login.cs",
+              "RelativeDocumentMoniker": "Login.cs",
+              "ToolTip": "E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\Login.cs [Design]",
+              "RelativeToolTip": "Login.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T08:41:43.551Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Loadthu.cs [Design]",
+              "DocumentMoniker": "E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\Loadthu.cs",
+              "RelativeDocumentMoniker": "Loadthu.cs",
+              "ToolTip": "E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\Loadthu.cs [Design]",
+              "RelativeToolTip": "Loadthu.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T08:41:42.601Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Loading.cs [Design]",
+              "DocumentMoniker": "E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\Loading.cs",
+              "RelativeDocumentMoniker": "Loading.cs",
+              "ToolTip": "E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\Loading.cs [Design]",
+              "RelativeToolTip": "Loading.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T08:41:41.725Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "InBaoCao.cs [Design]",
+              "DocumentMoniker": "E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\InBaoCao.cs",
+              "RelativeDocumentMoniker": "InBaoCao.cs",
+              "ToolTip": "E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\InBaoCao.cs [Design]",
+              "RelativeToolTip": "InBaoCao.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T08:41:40.643Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "formSV.cs [Design]",
+              "DocumentMoniker": "E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\formSV.cs",
+              "RelativeDocumentMoniker": "formSV.cs",
+              "ToolTip": "E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\formSV.cs [Design]*",
+              "RelativeToolTip": "formSV.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T08:41:32.503Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "formMonHoc.cs [Design]",
+              "DocumentMoniker": "E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\formMonHoc.cs",
+              "RelativeDocumentMoniker": "formMonHoc.cs",
+              "ToolTip": "E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\formMonHoc.cs [Design]",
+              "RelativeToolTip": "formMonHoc.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T08:41:24.993Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "FormMain.cs [Design]",
+              "DocumentMoniker": "E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\FormMain.cs",
+              "RelativeDocumentMoniker": "FormMain.cs",
+              "ToolTip": "E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\FormMain.cs [Design]",
+              "RelativeToolTip": "FormMain.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T08:41:21.947Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "formDiem.cs [Design]",
+              "DocumentMoniker": "E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\formDiem.cs",
+              "RelativeDocumentMoniker": "formDiem.cs",
+              "ToolTip": "E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\formDiem.cs [Design]",
+              "RelativeToolTip": "formDiem.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T08:40:25.294Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\Form1.cs [Design]",
+              "RelativeToolTip": "Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T08:40:21.93Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BaoCao.cs [Design]",
+              "DocumentMoniker": "E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\BaoCao.cs",
+              "RelativeDocumentMoniker": "BaoCao.cs",
+              "ToolTip": "E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\BaoCao.cs [Design]",
+              "RelativeToolTip": "BaoCao.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T08:40:17.029Z"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "formLopTC.cs [Design]",
+              "DocumentMoniker": "E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\formLopTC.cs",
+              "RelativeDocumentMoniker": "formLopTC.cs",
+              "ToolTip": "E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\formLopTC.cs [Design]",
+              "RelativeToolTip": "formLopTC.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T02:12:32.035Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "formLopHP.cs [Design]",
+              "DocumentMoniker": "E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\formLopHP.cs",
+              "RelativeDocumentMoniker": "formLopHP.cs",
+              "ToolTip": "E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\formLopHP.cs [Design]",
+              "RelativeToolTip": "formLopHP.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T02:09:46.026Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "ProcessDatabase.cs",
               "DocumentMoniker": "E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\ProcessDatabase.cs",
               "RelativeDocumentMoniker": "ProcessDatabase.cs",
               "ToolTip": "E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\ProcessDatabase.cs",
               "RelativeToolTip": "ProcessDatabase.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABIAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAABwAAAAAAAAAAAAQwDgAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-05T17:06:46.528Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-05T17:06:46.528Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 15,
               "Title": "formGV.Designer.cs",
               "DocumentMoniker": "E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\formGV.Designer.cs",
               "RelativeDocumentMoniker": "formGV.Designer.cs",
               "ToolTip": "E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\formGV.Designer.cs",
               "RelativeToolTip": "formGV.Designer.cs",
-              "ViewState": "AgIAAFEBAAAAAAAAAAAuwFsBAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAJMCAAAAAAAAAAAiwJsCAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-05T16:52:54.36Z",
               "EditorCaption": ""
@@ -128,24 +321,11 @@
               "Title": "formGV.cs",
               "DocumentMoniker": "E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\formGV.cs",
               "RelativeDocumentMoniker": "formGV.cs",
-              "ToolTip": "E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\formGV.cs*",
-              "RelativeToolTip": "formGV.cs*",
-              "ViewState": "AgIAAG4AAAAAAAAAAAAAwIgAAAANAAAAAAAAAA==",
+              "ToolTip": "E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\formGV.cs",
+              "RelativeToolTip": "formGV.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADkAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-05T16:52:15.542Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-05T16:51:57.361Z",
               "EditorCaption": ""
             },
             {
@@ -154,8 +334,8 @@
               "Title": "formGV.cs [Design]",
               "DocumentMoniker": "E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\formGV.cs",
               "RelativeDocumentMoniker": "formGV.cs",
-              "ToolTip": "E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\formGV.cs [Design]*",
-              "RelativeToolTip": "formGV.cs [Design]*",
+              "ToolTip": "E:\\LTTQ\\BTL_LTTQ\\BTL_LTTQ\\formGV.cs [Design]",
+              "RelativeToolTip": "formGV.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-05T16:47:04.335Z",
               "EditorCaption": " [Design]"
@@ -173,6 +353,18 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
             }
           ]
         }

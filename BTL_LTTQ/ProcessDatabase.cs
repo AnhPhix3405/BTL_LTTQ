@@ -45,14 +45,14 @@ namespace BTL_LTTQ
             return dataTable;
         }
 
-        public void CapNhatDuLieu(string sql)
+        public int CapNhatDuLieu(string sql)
         {
             Ketnoi();
-            SqlCommand sqlcommand = new SqlCommand();
-            sqlcommand.Connection = sqlConnect;
-            sqlcommand.CommandText = sql;
-            sqlcommand.ExecuteNonQuery();
+            SqlCommand sqlcommand = new SqlCommand(sql, sqlConnect);
+            int rowsAffected = sqlcommand.ExecuteNonQuery();
             Dongketnoi();
+            return rowsAffected;
         }
+
     }
 }
