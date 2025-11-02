@@ -31,9 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formDiem));
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtTimKiemTheoMaSV = new System.Windows.Forms.TextBox();
             this.btnTatCa = new System.Windows.Forms.Button();
             this.btnTimKiem = new System.Windows.Forms.Button();
-            this.txtTimKiemTheoMa = new System.Windows.Forms.TextBox();
+            this.txtTimKiemTheoMaLop = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -55,13 +56,13 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnRefresh = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lable21 = new System.Windows.Forms.Label();
+            this.txtTenSV = new System.Windows.Forms.TextBox();
             this.btnSua = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.txtMaLop = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvDiem = new System.Windows.Forms.DataGridView();
-            this.txtTenSV = new System.Windows.Forms.TextBox();
-            this.lable21 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.btnThem.SuspendLayout();
@@ -88,21 +89,33 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.txtTimKiemTheoMaSV);
             this.panel1.Controls.Add(this.btnTatCa);
             this.panel1.Controls.Add(this.btnTimKiem);
-            this.panel1.Controls.Add(this.txtTimKiemTheoMa);
+            this.panel1.Controls.Add(this.txtTimKiemTheoMaLop);
             this.panel1.Location = new System.Drawing.Point(418, 62);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(619, 71);
+            this.panel1.Size = new System.Drawing.Size(854, 71);
             this.panel1.TabIndex = 8;
+            // 
+            // txtTimKiemTheoMaSV
+            // 
+            this.txtTimKiemTheoMaSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTimKiemTheoMaSV.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.txtTimKiemTheoMaSV.Location = new System.Drawing.Point(314, 25);
+            this.txtTimKiemTheoMaSV.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTimKiemTheoMaSV.Name = "txtTimKiemTheoMaSV";
+            this.txtTimKiemTheoMaSV.Size = new System.Drawing.Size(256, 26);
+            this.txtTimKiemTheoMaSV.TabIndex = 7;
+            this.txtTimKiemTheoMaSV.Text = "nhập mã SV";
             // 
             // btnTatCa
             // 
             this.btnTatCa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnTatCa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTatCa.ForeColor = System.Drawing.SystemColors.Info;
-            this.btnTatCa.Location = new System.Drawing.Point(476, 17);
+            this.btnTatCa.Location = new System.Drawing.Point(730, 17);
             this.btnTatCa.Margin = new System.Windows.Forms.Padding(4);
             this.btnTatCa.Name = "btnTatCa";
             this.btnTatCa.Size = new System.Drawing.Size(100, 43);
@@ -116,7 +129,7 @@
             this.btnTimKiem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimKiem.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.btnTimKiem.Location = new System.Drawing.Point(368, 17);
+            this.btnTimKiem.Location = new System.Drawing.Point(622, 17);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(100, 43);
@@ -124,16 +137,16 @@
             this.btnTimKiem.Text = "Tìm";
             this.btnTimKiem.UseVisualStyleBackColor = false;
             // 
-            // txtTimKiemTheoMa
+            // txtTimKiemTheoMaLop
             // 
-            this.txtTimKiemTheoMa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimKiemTheoMa.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.txtTimKiemTheoMa.Location = new System.Drawing.Point(37, 25);
-            this.txtTimKiemTheoMa.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTimKiemTheoMa.Name = "txtTimKiemTheoMa";
-            this.txtTimKiemTheoMa.Size = new System.Drawing.Size(256, 26);
-            this.txtTimKiemTheoMa.TabIndex = 0;
-            this.txtTimKiemTheoMa.Text = "nhập mã lớp";
+            this.txtTimKiemTheoMaLop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTimKiemTheoMaLop.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.txtTimKiemTheoMaLop.Location = new System.Drawing.Point(37, 25);
+            this.txtTimKiemTheoMaLop.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTimKiemTheoMaLop.Name = "txtTimKiemTheoMaLop";
+            this.txtTimKiemTheoMaLop.Size = new System.Drawing.Size(256, 26);
+            this.txtTimKiemTheoMaLop.TabIndex = 0;
+            this.txtTimKiemTheoMaLop.Text = "nhập mã lớp";
             // 
             // label6
             // 
@@ -322,7 +335,6 @@
             this.txtDiemThi.Size = new System.Drawing.Size(169, 26);
             this.txtDiemThi.TabIndex = 35;
             this.txtDiemThi.Text = "0";
-            this.txtDiemThi.TextChanged += new System.EventHandler(this.txtDiemThi_TextChanged);
             // 
             // label8
             // 
@@ -385,6 +397,26 @@
             this.panel2.Size = new System.Drawing.Size(377, 516);
             this.panel2.TabIndex = 10;
             // 
+            // lable21
+            // 
+            this.lable21.AutoSize = true;
+            this.lable21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lable21.Location = new System.Drawing.Point(19, 122);
+            this.lable21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lable21.Name = "lable21";
+            this.lable21.Size = new System.Drawing.Size(69, 20);
+            this.lable21.TabIndex = 13;
+            this.lable21.Text = "Tên SV:";
+            // 
+            // txtTenSV
+            // 
+            this.txtTenSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenSV.Location = new System.Drawing.Point(117, 122);
+            this.txtTenSV.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTenSV.Name = "txtTenSV";
+            this.txtTenSV.Size = new System.Drawing.Size(245, 26);
+            this.txtTenSV.TabIndex = 14;
+            // 
             // btnSua
             // 
             this.btnSua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(158)))), ((int)(((byte)(0)))));
@@ -441,26 +473,6 @@
             this.dgvDiem.Size = new System.Drawing.Size(1037, 517);
             this.dgvDiem.TabIndex = 11;
             // 
-            // txtTenSV
-            // 
-            this.txtTenSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenSV.Location = new System.Drawing.Point(117, 122);
-            this.txtTenSV.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTenSV.Name = "txtTenSV";
-            this.txtTenSV.Size = new System.Drawing.Size(245, 26);
-            this.txtTenSV.TabIndex = 14;
-            // 
-            // lable21
-            // 
-            this.lable21.AutoSize = true;
-            this.lable21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lable21.Location = new System.Drawing.Point(19, 122);
-            this.lable21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lable21.Name = "lable21";
-            this.lable21.Size = new System.Drawing.Size(69, 20);
-            this.lable21.TabIndex = 13;
-            this.lable21.Text = "Tên SV:";
-            // 
             // formDiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -502,7 +514,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnTatCa;
         private System.Windows.Forms.Button btnTimKiem;
-        private System.Windows.Forms.TextBox txtTimKiemTheoMa;
+        private System.Windows.Forms.TextBox txtTimKiemTheoMaLop;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
@@ -531,5 +543,6 @@
         private System.Windows.Forms.DataGridView dgvDiem;
         private System.Windows.Forms.Label lable21;
         private System.Windows.Forms.TextBox txtTenSV;
+        private System.Windows.Forms.TextBox txtTimKiemTheoMaSV;
     }
 }

@@ -19,10 +19,12 @@ CREATE TABLE MonHoc (
     SoTC INT,
     SoTietLT INT,
     SoTietTH INT,
-    HeSoDiem DECIMAL(3, 2),
+    HeSoQT DECIMAL(3,2) NOT NULL,
+    HeSoThi DECIMAL(3,2) NOT NULL,
     MaKhoa VARCHAR(10),
     FOREIGN KEY (MaKhoa) REFERENCES Khoa(MaKhoa)
 );
+
 
 -- 3. Giảng Viên (Tham chiếu Khoa)
 CREATE TABLE GiangVien (
