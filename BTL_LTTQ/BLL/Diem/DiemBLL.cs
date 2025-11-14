@@ -14,9 +14,8 @@ namespace BTL_LTTQ.BLL.Diem
 
         public DataTable LayDanhSach()
         {
-            return new DiemDAL().GetAll(); // tạo DAL mới để tránh giữ cache cũ
+            return dal.GetAll();
         }
-
 
         public string ThemDiem(Score diem)
         {
@@ -62,11 +61,5 @@ namespace BTL_LTTQ.BLL.Diem
 
             return dal.Delete(MaLop, MaSV) ? "Xóa thành công!" : "Xóa thất bại!";
         }
-        //tìm kiếm theo mã lớp tc/ mã sv  
-        public DataTable TimKiem(string maLop, string maSV)
-        {
-            return dal.Search(maLop, maSV);
-        }
-
     }
 }
