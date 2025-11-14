@@ -48,13 +48,19 @@
   <ItemGroup>
     <Compile Include="BLL\Diem\DiemBLL.cs" />
     <Compile Include="BLL\Login\LoginBLL.cs" />
+    <Compile Include="BLL\PhanCong\PhanCongBLL.cs" />
     <Compile Include="BLL\Session\UserSession.cs" />
+    <Compile Include="BLL\SinhVien\SinhVienBLL.cs" />
     <Compile Include="BLL\Subject\SubjectBLL.cs" />
     <Compile Include="DAL\DatabaseConnection.cs" />
     <Compile Include="DAL\Diem\DiemDAL.cs" />
     <Compile Include="DAL\Login\LoginDAL.cs" />
+    <Compile Include="DAL\PhanCong\PhanCongDAL.cs" />
+    <Compile Include="DAL\SinhVien\SinhVienDAL.cs" />
     <Compile Include="DAL\Subject\SubjectDAL.cs" />
+    <Compile Include="DTO\PhanCongDTO.cs" />
     <Compile Include="DTO\Score.cs" />
+    <Compile Include="DTO\SinhVienDTO.cs" />
     <Compile Include="DTO\Subject.cs" />
     <Compile Include="GUI\BaoCao.cs">
       <SubType>Form</SubType>
@@ -80,12 +86,6 @@
     <Compile Include="GUI\formGV.Designer.cs">
       <DependentUpon>formGV.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\formLopHP.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\formLopHP.Designer.cs">
-      <DependentUpon>formLopHP.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\formLopTC.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +103,12 @@
     </Compile>
     <Compile Include="GUI\formMonHoc.Designer.cs">
       <DependentUpon>formMonHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\formPhanCongGV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\formPhanCongGV.Designer.cs">
+      <DependentUpon>formPhanCongGV.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\formSV.cs">
       <SubType>Form</SubType>
@@ -148,9 +154,6 @@
     <EmbeddedResource Include="GUI\formGV.resx">
       <DependentUpon>formGV.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\formLopHP.resx">
-      <DependentUpon>formLopHP.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\formLopTC.resx">
       <DependentUpon>formLopTC.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\formMonHoc.resx">
       <DependentUpon>formMonHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\formPhanCongGV.resx">
+      <DependentUpon>formPhanCongGV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\formSV.resx">
       <DependentUpon>formSV.cs</DependentUpon>

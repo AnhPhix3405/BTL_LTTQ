@@ -20,17 +20,16 @@ namespace BTL_LTTQ
         public formDiem()
         {
             InitializeComponent();
-
-            // Chỉ gọi LoadData() 1 lần duy nhất
-            LoadData();
-
-            // Gán sự kiện
+            LoadData(); // Tải dữ liệu khi form khởi tạo
+            // Thêm sự kiện Click cho các nút (giả sử tên nút là btnThem, btnSua, etc.)
             btn_ThemDiem.Click += BtnThem_Click;
             btn_SuaDiem.Click += BtnSua_Click;
             btn_XoaDiem.Click += BtnXoa_Click;
             btn_LamMoiDiem.Click += BtnLamMoi_Click;
             btnTimKiem.Click += BtnTim_Click;
             btnTatCa.Click += BtnTatCa_Click;
+
+            // Thêm sự kiện cho DataGridView khi chọn một hàng
             dgvDiem.CellClick += DataGridView1_CellClick;
         }
 
@@ -46,19 +45,14 @@ namespace BTL_LTTQ
             try
             {
                 DataTable dt = diemBLL.LayDanhSach();
-
-                // Cách 1: Đơn giản hơn - chỉ cần set DataSource trực tiếp
+                // Giả sử DataGridView của bạn có tên là dataGridView1
                 dgvDiem.DataSource = dt;
-
-                // Refresh UI
-                dgvDiem.Refresh();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
 
         /// <summary>
         /// Lấy dữ liệu từ các control trên Form và tạo đối tượng Score
@@ -89,7 +83,6 @@ namespace BTL_LTTQ
         {
             txtMaLop.Clear();
             txtMaSV.Clear();
-            txtTenSV.Clear();
             txtDiemCC.Text = "0";
             txtDiemGK.Text = "0";
             txtDiemThi.Text = "0";
@@ -111,7 +104,7 @@ namespace BTL_LTTQ
             string result = diemBLL.ThemDiem(newScore);
 
             MessageBox.Show(result);
-            if (result.Contains("Thêm thành công!"))
+            if (result.Contains("Thành công"))
             {
                 LoadData();
                 ClearInputs();
@@ -124,7 +117,7 @@ namespace BTL_LTTQ
             string result = diemBLL.SuaDiem(scoreToUpdate);
 
             MessageBox.Show(result);
-            if (result.Contains("Sửa thành công!"))
+            if (result.Contains("Thành công"))
             {
                 LoadData();
                 ClearInputs();
@@ -155,33 +148,22 @@ namespace BTL_LTTQ
             }
         }
 
-
+        // **Lưu ý**: Để sử dụng hàm tìm kiếm này, bạn cần thêm hàm LayDanhSachTheoMaLop(string maLop) vào DiemDAL và DiemBLL
         private void BtnTim_Click(object sender, EventArgs e)
         {
-            string maLop = txtTimKiemTheoMaLop.Text.Trim();
-            string maSV = txtTimKiemTheoMaSV.Text.Trim();
-
-            if (string.IsNullOrWhiteSpace(maLop) && string.IsNullOrWhiteSpace(maSV))
+            string maLop = txtTimKiemTheoMa.Text.Trim(); // Giả sử ô textbox tìm kiếm tên là txtTimKiemMaLop
+            if (string.IsNullOrWhiteSpace(maLop))
             {
-                MessageBox.Show("Vui lòng nhập ít nhất Mã lớp hoặc Mã SV để tìm kiếm.", "Cảnh báo");
+                MessageBox.Show("Vui lòng nhập Mã lớp để tìm kiếm.", "Cảnh báo");
                 return;
             }
 
-            DataTable dt = diemBLL.TimKiem(maLop, maSV);
+            // Bạn cần tự định nghĩa hàm này trong BLL và DAL
+            // DataTable dt = diemBLL.LayDanhSachTheoMaLop(maLop); 
+            // dataGridView1.DataSource = dt;
 
-            if (dt != null && dt.Rows.Count > 0)
-            {
-                dgvDiem.DataSource = dt;
-                dgvDiem.Refresh();
-            }
-            else
-            {
-                MessageBox.Show("Không tìm thấy dữ liệu phù hợp.", "Thông báo");
-                dgvDiem.DataSource = null;
-            }
+            MessageBox.Show("Chức năng tìm kiếm chưa được triển khai đầy đủ. Vui lòng thêm hàm vào BLL/DAL.");
         }
-
-
 
         private void BtnTatCa_Click(object sender, EventArgs e)
         {
@@ -200,14 +182,16 @@ namespace BTL_LTTQ
 
                 // Đổ dữ liệu từ hàng được chọn vào các TextBox
                 txtMaLop.Text = row.Cells["MaLop"].Value.ToString();
-                txtTenSV.Text= row.Cells["TenSV"].Value.ToString();
                 txtMaSV.Text = row.Cells["MaSV"].Value.ToString();
-                txtDiemCC.Text = row.Cells["DiemCC"].Value.ToString();
-                txtDiemGK.Text = row.Cells["DiemGK"].Value.ToString();
+                txtDiemCC.Text = row.Cells["DiemChuyenCan"].Value.ToString();
+                txtDiemGK.Text = row.Cells["DiemGiuaKy"].Value.ToString();
                 txtDiemThi.Text = row.Cells["DiemThi"].Value.ToString();
             }
         }
 
-        
+        private void txtDiemThi_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

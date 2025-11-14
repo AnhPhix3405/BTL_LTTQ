@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BTL_LTTQ.GUI;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -18,7 +19,8 @@ namespace BTL_LTTQ
             Application.SetCompatibleTextRenderingDefault(false);
             // Application.Run(new Login());
             //Application.Run(new FormMain()); 
-            Application.Run(new formDiem());
+            Application.Run(new formPhanCongGV());
+            //Application.Run(new formSV());
         }
     }
 }
