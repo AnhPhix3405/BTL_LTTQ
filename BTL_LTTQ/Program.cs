@@ -18,7 +18,7 @@ namespace BTL_LTTQ
             Application.SetCompatibleTextRenderingDefault(false);
             // Application.Run(new Login());
             //Application.Run(new FormMain()); 
-            Application.Run(new formDiem());
+            Application.Run(new formLopTC());
         }
     }
 }

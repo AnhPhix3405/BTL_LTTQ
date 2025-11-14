@@ -214,6 +214,7 @@
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(114, 45);
             this.btnThem.TabIndex = 27;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // label15
             // 
@@ -292,6 +293,7 @@
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(114, 45);
             this.btnRefresh.TabIndex = 31;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // label20
             // 
@@ -318,6 +320,7 @@
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(114, 45);
             this.btnXoa.TabIndex = 29;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // label19
             // 
@@ -354,6 +357,7 @@
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(114, 45);
             this.btnSua.TabIndex = 28;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // label18
             // 
@@ -623,6 +627,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "formGV";
             this.Text = "formGV";
+            this.Load += new System.EventHandler(this.formGV_Load);
             this.btnThem.ResumeLayout(false);
             this.btnThem.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

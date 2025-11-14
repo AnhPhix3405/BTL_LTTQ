@@ -150,3 +150,35 @@ INSERT INTO TaiKhoan (MaTK, TenDangNhap, MatKhau, LoaiTaiKhoan, MaGV) VALUES
 ('TKADM', 'admin', 'passadmin', N'Admin', NULL),
 ('TK001', 'nguyenvana', 'matkhau123', N'Giảng viên', 'GV001'),
 ('TK002', 'tranthib', 'matkhau456', N'Giảng viên', 'GV002');
+
+
+ALTER TABLE GiangVien
+ADD GioiTinh NVARCHAR(10) NULL;
+GO
+
+-- 2. Thêm cột Email (VARCHAR(100)
+ALTER TABLE GiangVien
+ADD Email VARCHAR(100) NULL;
+GO
+
+-- 1. Thêm cột TinhTrang
+ALTER TABLE LopTinChi
+ADD TinhTrang NVARCHAR(50) NULL;
+GO
+
+-- 2. (Tùy chọn nhưng khuyến nghị) Xóa cột TenLop vì không có trên form
+-- Nếu bạn vẫn muốn giữ TenLop, hãy bỏ qua lệnh này
+ALTER TABLE LopTinChi
+DROP COLUMN TenLop;
+GO
+
+-- 3. Cập nhật giá trị mặc định cho các lớp tín chỉ cũ (nếu có)
+-- Đặt tất cả các lớp đã có là "Chưa phân công" cho thống nhất
+UPDATE LopTinChi
+SET TinhTrang = N'Chưa phân công'
+WHERE TinhTrang IS NULL;
+GO
+
+ALTER TABLE LopTinChi
+ADD HocKy INT NULL;
+GO

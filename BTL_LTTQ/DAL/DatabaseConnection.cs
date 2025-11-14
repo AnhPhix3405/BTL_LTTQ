@@ -6,7 +6,7 @@ namespace BTL_LTTQ.DAL
 {
     public class DatabaseConnection
     {   
-        private static string connectionString = @"Data Source=LAPTOP-LHTIMU8S;Initial Catalog=QL_GiangDay;Integrated Security=True;";
+        private static string connectionString = @"Data Source=LAPTOP-3JGSAUFN\SQLEXPRESS01;Initial Catalog=QL_GiangDay;Integrated Security=True;";
         
         // Có thể thêm method để set connection string từ bên ngoài nếu cần
         public static void SetConnectionString(string connString)
@@ -80,7 +80,8 @@ namespace BTL_LTTQ.DAL
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("Lỗi thực thi command: " + ex.Message);
+                    // Chỉ cần "throw;" để ném lại lỗi gốc
+                    throw;
                 }
             }
         }
