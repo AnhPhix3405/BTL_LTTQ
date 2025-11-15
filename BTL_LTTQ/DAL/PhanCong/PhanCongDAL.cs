@@ -13,9 +13,7 @@ namespace BTL_LTTQ.DAL
             string query = @"
                 SELECT 
                     pc.MaPC, pc.NgayPC, pc.NgayBatDau, pc.NgayKetThuc,
-                    CONVERT(varchar(5), pc.GioBatDau, 108) AS GioBatDau,
-                    CONVERT(varchar(5), pc.GioKetThuc, 108) AS GioKetThuc,
-                    DATENAME(WEEKDAY, pc.NgayBatDau) AS Thu,
+                    pc.CaHoc, pc.Thu,
                     pc.MaPhong AS Phong, kv.TenKhuVuc AS Toa,
                     gv.MaGV, gv.TenGV, ltc.MaLop, ltc.TenLop, ltc.MaMH, ltc.NamHoc
                 FROM PhanCongGiangDay pc
@@ -31,17 +29,17 @@ namespace BTL_LTTQ.DAL
         {
             string query = @"
                 INSERT INTO PhanCongGiangDay 
-                (MaPC, NgayPC, NgayBatDau, NgayKetThuc, GioBatDau, GioKetThuc, MaPhong, MaGV, MaLop)
-                VALUES (@MaPC, @NgayPC, @NgayBatDau, @NgayKetThuc, @GioBatDau, @GioKetThuc, @MaPhong, @MaGV, @MaLop)";
+                (MaPC, NgayPC, NgayBatDau, NgayKetThuc, CaHoc, Thu, MaPhong, MaGV, MaLop)
+                VALUES (@MaPC, @NgayPC, @NgayBatDau, @NgayKetThuc, @CaHoc, @Thu, @MaPhong, @MaGV, @MaLop)";
 
             var parameters = new[]
             {
                 new SqlParameter("@MaPC", pc.MaPC),
-                new SqlParameter("@NgayPC", pc.NgayPC),
+                new SqlParameter("@NgayPC", pc.NgayPC ?? (object)DBNull.Value),
                 new SqlParameter("@NgayBatDau", pc.NgayBatDau ?? (object)DBNull.Value),
                 new SqlParameter("@NgayKetThuc", pc.NgayKetThuc ?? (object)DBNull.Value),
-                new SqlParameter("@GioBatDau", pc.GioBatDau),
-                new SqlParameter("@GioKetThuc", pc.GioKetThuc),
+                new SqlParameter("@CaHoc", pc.CaHoc),
+                new SqlParameter("@Thu", pc.Thu),
                 new SqlParameter("@MaPhong", pc.MaPhong ?? (object)DBNull.Value),
                 new SqlParameter("@MaGV", pc.MaGV ?? (object)DBNull.Value),
                 new SqlParameter("@MaLop", pc.MaLop ?? (object)DBNull.Value)
@@ -55,18 +53,18 @@ namespace BTL_LTTQ.DAL
             string query = @"
                 UPDATE PhanCongGiangDay 
                 SET NgayPC = @NgayPC, NgayBatDau = @NgayBatDau, NgayKetThuc = @NgayKetThuc,
-                    GioBatDau = @GioBatDau, GioKetThuc = @GioKetThuc, MaPhong = @MaPhong, 
+                    CaHoc = @CaHoc, Thu = @Thu, MaPhong = @MaPhong, 
                     MaGV = @MaGV, MaLop = @MaLop
                 WHERE MaPC = @MaPC";
 
             var parameters = new[]
             {
                 new SqlParameter("@MaPC", pc.MaPC),
-                new SqlParameter("@NgayPC", pc.NgayPC),
+                new SqlParameter("@NgayPC", pc.NgayPC ?? (object)DBNull.Value),
                 new SqlParameter("@NgayBatDau", pc.NgayBatDau ?? (object)DBNull.Value),
                 new SqlParameter("@NgayKetThuc", pc.NgayKetThuc ?? (object)DBNull.Value),
-                new SqlParameter("@GioBatDau", pc.GioBatDau),
-                new SqlParameter("@GioKetThuc", pc.GioKetThuc),
+                new SqlParameter("@CaHoc", pc.CaHoc),
+                new SqlParameter("@Thu", pc.Thu),
                 new SqlParameter("@MaPhong", pc.MaPhong ?? (object)DBNull.Value),
                 new SqlParameter("@MaGV", pc.MaGV ?? (object)DBNull.Value),
                 new SqlParameter("@MaLop", pc.MaLop ?? (object)DBNull.Value)
@@ -78,40 +76,33 @@ namespace BTL_LTTQ.DAL
         public bool Xoa(string maPC, string maLop)
         {
             string query = "DELETE FROM PhanCongGiangDay WHERE MaPC = @MaPC";
-            var parameters = new[]
-            {
-                new SqlParameter("@MaPC", maPC)
-            };
-
-            return DatabaseConnection.ExecuteNonQuery(query, parameters) > 0;
+            return DatabaseConnection.ExecuteNonQuery(query, new[] { new SqlParameter("@MaPC", maPC) }) > 0;
         }
 
         public bool KiemTraMaPCTrung(string maPC)
         {
             string query = "SELECT COUNT(*) FROM PhanCongGiangDay WHERE MaPC = @MaPC";
-            var parameters = new[] { new SqlParameter("@MaPC", maPC) };
-            return Convert.ToInt32(DatabaseConnection.ExecuteScalar(query, parameters)) > 0;
+            return Convert.ToInt32(DatabaseConnection.ExecuteScalar(query, new[] { new SqlParameter("@MaPC", maPC) })) > 0;
         }
 
         public bool KiemTraLopDaPhanCong(string maLop)
         {
-            string query = "SELECT TinhTrangLop FROM LopTinChi WHERE MaLop = @MaLop";
+            string query = "SELECT TinhTrang FROM LopTinChi WHERE MaLop = @MaLop";
             var result = DatabaseConnection.ExecuteScalar(query, new[] { new SqlParameter("@MaLop", maLop) });
             return result != null && Convert.ToBoolean(result);
         }
 
         public void CapNhatTinhTrangLop(string maLop, bool daPhanCong)
         {
-            string query = "UPDATE LopTinChi SET TinhTrangLop = @TinhTrang WHERE MaLop = @MaLop";
-            var parameters = new[]
+            string query = "UPDATE LopTinChi SET TinhTrang = @TinhTrang WHERE MaLop = @MaLop";
+            DatabaseConnection.ExecuteNonQuery(query, new[]
             {
                 new SqlParameter("@MaLop", maLop),
                 new SqlParameter("@TinhTrang", daPhanCong ? 1 : 0)
-            };
-            DatabaseConnection.ExecuteNonQuery(query, parameters);
+            });
         }
 
-        public bool KiemTraTrungLichGV(string maGV, DateTime? ngayBD, DateTime? ngayKT, TimeSpan gioBD, TimeSpan gioKT, string maPC = null)
+        public bool KiemTraTrungLichGV(string maGV, DateTime? ngayBD, DateTime? ngayKT, byte thu, byte caHoc, string maPC = null)
         {
             string query = @"
                 SELECT COUNT(*) FROM PhanCongGiangDay 
@@ -120,9 +111,8 @@ namespace BTL_LTTQ.DAL
                   AND ((@NgayBD BETWEEN NgayBatDau AND NgayKetThuc) 
                        OR (@NgayKT BETWEEN NgayBatDau AND NgayKetThuc)
                        OR (NgayBatDau BETWEEN @NgayBD AND @NgayKT))
-                  AND ((CAST(@GioBD AS time) BETWEEN GioBatDau AND GioKetThuc)
-                       OR (CAST(@GioKT AS time) BETWEEN GioBatDau AND GioKetThuc)
-                       OR (GioBatDau BETWEEN CAST(@GioBD AS time) AND CAST(@GioKT AS time)))";
+                  AND Thu = @Thu
+                  AND CaHoc = @CaHoc";
 
             var parameters = new[]
             {
@@ -130,14 +120,14 @@ namespace BTL_LTTQ.DAL
                 new SqlParameter("@MaPC", maPC ?? (object)DBNull.Value),
                 new SqlParameter("@NgayBD", ngayBD ?? (object)DBNull.Value),
                 new SqlParameter("@NgayKT", ngayKT ?? (object)DBNull.Value),
-                new SqlParameter("@GioBD", gioBD),
-                new SqlParameter("@GioKT", gioKT)
+                new SqlParameter("@Thu", thu),
+                new SqlParameter("@CaHoc", caHoc)
             };
 
             return Convert.ToInt32(DatabaseConnection.ExecuteScalar(query, parameters)) > 0;
         }
 
-        public bool KiemTraTrungPhong(string maPhong, DateTime? ngayBD, DateTime? ngayKT, TimeSpan gioBD, TimeSpan gioKT, string maPC = null)
+        public bool KiemTraTrungPhong(string maPhong, DateTime? ngayBD, DateTime? ngayKT, byte thu, byte caHoc, string maPC = null)
         {
             string query = @"
                 SELECT COUNT(*) FROM PhanCongGiangDay 
@@ -146,9 +136,8 @@ namespace BTL_LTTQ.DAL
                   AND ((@NgayBD BETWEEN NgayBatDau AND NgayKetThuc) 
                        OR (@NgayKT BETWEEN NgayBatDau AND NgayKetThuc)
                        OR (NgayBatDau BETWEEN @NgayBD AND @NgayKT))
-                  AND ((CAST(@GioBD AS time) BETWEEN GioBatDau AND GioKetThuc)
-                       OR (CAST(@GioKT AS time) BETWEEN GioBatDau AND GioKetThuc)
-                       OR (GioBatDau BETWEEN CAST(@GioBD AS time) AND CAST(@GioKT AS time)))";
+                  AND Thu = @Thu
+                  AND CaHoc = @CaHoc";
 
             var parameters = new[]
             {
@@ -156,8 +145,8 @@ namespace BTL_LTTQ.DAL
                 new SqlParameter("@MaPC", maPC ?? (object)DBNull.Value),
                 new SqlParameter("@NgayBD", ngayBD ?? (object)DBNull.Value),
                 new SqlParameter("@NgayKT", ngayKT ?? (object)DBNull.Value),
-                new SqlParameter("@GioBD", gioBD),
-                new SqlParameter("@GioKT", gioKT)
+                new SqlParameter("@Thu", thu),
+                new SqlParameter("@CaHoc", caHoc)
             };
 
             return Convert.ToInt32(DatabaseConnection.ExecuteScalar(query, parameters)) > 0;

@@ -41,8 +41,6 @@
             this.cmbKhoa = new System.Windows.Forms.ComboBox();
             this.cmbMonHoc = new System.Windows.Forms.ComboBox();
             this.cmbMaGv = new System.Windows.Forms.ComboBox();
-            this.dtpGioKetThuc = new System.Windows.Forms.DateTimePicker();
-            this.dtpGioBatDau = new System.Windows.Forms.DateTimePicker();
             this.txtNam = new System.Windows.Forms.TextBox();
             this.txtMaPC = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -64,6 +62,8 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.cmbPhongHoc = new System.Windows.Forms.ComboBox();
+            this.cmbThu = new System.Windows.Forms.ComboBox();
+            this.cmbCa = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhanCong)).BeginInit();
             this.SuspendLayout();
             // 
@@ -209,24 +209,6 @@
             this.cmbMaGv.Size = new System.Drawing.Size(325, 28);
             this.cmbMaGv.TabIndex = 45;
             // 
-            // dtpGioKetThuc
-            // 
-            this.dtpGioKetThuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.dtpGioKetThuc.Location = new System.Drawing.Point(571, 257);
-            this.dtpGioKetThuc.Margin = new System.Windows.Forms.Padding(4);
-            this.dtpGioKetThuc.Name = "dtpGioKetThuc";
-            this.dtpGioKetThuc.Size = new System.Drawing.Size(325, 26);
-            this.dtpGioKetThuc.TabIndex = 44;
-            // 
-            // dtpGioBatDau
-            // 
-            this.dtpGioBatDau.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.dtpGioBatDau.Location = new System.Drawing.Point(124, 258);
-            this.dtpGioBatDau.Margin = new System.Windows.Forms.Padding(4);
-            this.dtpGioBatDau.Name = "dtpGioBatDau";
-            this.dtpGioBatDau.Size = new System.Drawing.Size(312, 26);
-            this.dtpGioBatDau.TabIndex = 43;
-            // 
             // txtNam
             // 
             this.txtNam.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
@@ -285,9 +267,9 @@
             this.label5.Location = new System.Drawing.Point(473, 262);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 20);
+            this.label5.Size = new System.Drawing.Size(61, 20);
             this.label5.TabIndex = 37;
-            this.label5.Text = "Đến Giờ";
+            this.label5.Text = "Ca dạy";
             // 
             // label6
             // 
@@ -318,9 +300,9 @@
             this.label4.Location = new System.Drawing.Point(29, 263);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 20);
+            this.label4.Size = new System.Drawing.Size(37, 20);
             this.label4.TabIndex = 34;
-            this.label4.Text = "Từ Giờ";
+            this.label4.Text = "Thứ";
             // 
             // label3
             // 
@@ -447,11 +429,33 @@
             this.cmbPhongHoc.Size = new System.Drawing.Size(325, 28);
             this.cmbPhongHoc.TabIndex = 68;
             // 
+            // cmbThu
+            // 
+            this.cmbThu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.cmbThu.FormattingEnabled = true;
+            this.cmbThu.Location = new System.Drawing.Point(124, 257);
+            this.cmbThu.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbThu.Name = "cmbThu";
+            this.cmbThu.Size = new System.Drawing.Size(312, 28);
+            this.cmbThu.TabIndex = 69;
+            // 
+            // cmbCa
+            // 
+            this.cmbCa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.cmbCa.FormattingEnabled = true;
+            this.cmbCa.Location = new System.Drawing.Point(571, 257);
+            this.cmbCa.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbCa.Name = "cmbCa";
+            this.cmbCa.Size = new System.Drawing.Size(325, 28);
+            this.cmbCa.TabIndex = 70;
+            // 
             // formPhanCongGV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1372, 808);
+            this.Controls.Add(this.cmbCa);
+            this.Controls.Add(this.cmbThu);
             this.Controls.Add(this.cmbPhongHoc);
             this.Controls.Add(this.dtpNgayKetThuc);
             this.Controls.Add(this.dtpNgayBatDau);
@@ -474,8 +478,6 @@
             this.Controls.Add(this.cmbKhoa);
             this.Controls.Add(this.cmbMonHoc);
             this.Controls.Add(this.cmbMaGv);
-            this.Controls.Add(this.dtpGioKetThuc);
-            this.Controls.Add(this.dtpGioBatDau);
             this.Controls.Add(this.txtNam);
             this.Controls.Add(this.txtMaPC);
             this.Controls.Add(this.label10);
@@ -512,8 +514,6 @@
         private System.Windows.Forms.ComboBox cmbKhoa;
         private System.Windows.Forms.ComboBox cmbMonHoc;
         private System.Windows.Forms.ComboBox cmbMaGv;
-        private System.Windows.Forms.DateTimePicker dtpGioKetThuc;
-        private System.Windows.Forms.DateTimePicker dtpGioBatDau;
         private System.Windows.Forms.TextBox txtNam;
         private System.Windows.Forms.TextBox txtMaPC;
         private System.Windows.Forms.Label label10;
@@ -535,5 +535,7 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox cmbPhongHoc;
+        private System.Windows.Forms.ComboBox cmbThu;
+        private System.Windows.Forms.ComboBox cmbCa;
     }
 }

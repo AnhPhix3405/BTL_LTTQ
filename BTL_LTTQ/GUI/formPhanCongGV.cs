@@ -21,6 +21,8 @@ namespace BTL_LTTQ.GUI
             InitializeComponent();
             SetupDateTimePickers();
             SetupPlaceholder();
+            SetupCaHocComboBox();  // THÊM MỚI
+            SetupThuComboBox();    // THÊM MỚI
             Load += formPhanCongGV_Load;
             dgvPhanCong.CellClick += dgvPhanCong_CellClick;
             btnThem.Click += btnThem_Click;
@@ -46,25 +48,15 @@ namespace BTL_LTTQ.GUI
 
             dtpNgayKetThuc.Format = DateTimePickerFormat.Custom;
             dtpNgayKetThuc.CustomFormat = "dd/MM/yyyy";
-
-            dtpGioBatDau.Format = DateTimePickerFormat.Custom;
-            dtpGioBatDau.CustomFormat = "HH:mm";
-            dtpGioBatDau.ShowUpDown = true;
-            dtpGioBatDau.Value = DateTime.Today.AddHours(7);
-
-            dtpGioKetThuc.Format = DateTimePickerFormat.Custom;
-            dtpGioKetThuc.CustomFormat = "HH:mm";
-            dtpGioKetThuc.ShowUpDown = true;
-            dtpGioKetThuc.Value = DateTime.Today.AddHours(9);
         }
 
         private void SetupPlaceholder()
         {
-            txtTimKiem.Text = "Nhập mã PC hoặc mã GV...";
+            txtTimKiem.Text = "Nhập mã PC, mã GV hoặc tên GV..."; // ✅ SỬA
             txtTimKiem.ForeColor = System.Drawing.Color.Gray;
             txtTimKiem.GotFocus += (s, e) =>
             {
-                if (txtTimKiem.Text == "Nhập mã PC hoặc mã GV...")
+                if (txtTimKiem.Text == "Nhập mã PC, mã GV hoặc tên GV...") // ✅ SỬA
                 {
                     txtTimKiem.Text = "";
                     txtTimKiem.ForeColor = System.Drawing.Color.Black;
@@ -74,7 +66,7 @@ namespace BTL_LTTQ.GUI
             {
                 if (string.IsNullOrWhiteSpace(txtTimKiem.Text))
                 {
-                    txtTimKiem.Text = "Nhập mã PC hoặc mã GV...";
+                    txtTimKiem.Text = "Nhập mã PC, mã GV hoặc tên GV..."; // ✅ SỬA
                     txtTimKiem.ForeColor = System.Drawing.Color.Gray;
                 }
             };
@@ -99,8 +91,7 @@ namespace BTL_LTTQ.GUI
                 ("TenGV", "Giảng viên"),
                 ("TenLop", "Lớp tín chỉ"),
                 ("Thu", "Thứ"),
-                ("GioBatDau", "Giờ bắt đầu"),
-                ("GioKetThuc", "Giờ kết thúc"),
+                ("CaHoc", "Ca học"),
                 ("NgayBatDau", "Từ ngày"),
                 ("NgayKetThuc", "Đến ngày"),
                 ("Phong", "Phòng"),
@@ -124,13 +115,41 @@ namespace BTL_LTTQ.GUI
             string[] hiddenCols = { "MaGV", "MaLop", "MaMH" };
             foreach (string name in hiddenCols)
             {
-                var column = new DataGridViewTextBoxColumn
+                dgvPhanCong.Columns.Add(new DataGridViewTextBoxColumn
                 {
                     Name = name,
                     DataPropertyName = name,
                     Visible = false
-                };
-                dgvPhanCong.Columns.Add(column);
+                });
+            }
+            
+            // FORMAT HIỂN THỊ CHO CỘT THỨ VÀ CA
+            dgvPhanCong.CellFormatting += dgvPhanCong_CellFormatting;
+        }
+
+        private void dgvPhanCong_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dgvPhanCong.Columns[e.ColumnIndex].Name == "Thu" && e.Value != null)
+            {
+                byte thu = Convert.ToByte(e.Value);
+                string displayText = "Không xác định";
+                
+                if (thu == 2) displayText = "Thứ Hai";
+                else if (thu == 3) displayText = "Thứ Ba";
+                else if (thu == 4) displayText = "Thứ Tư";
+                else if (thu == 5) displayText = "Thứ Năm";
+                else if (thu == 6) displayText = "Thứ Sáu";
+                else if (thu == 7) displayText = "Thứ Bảy";
+                else if (thu == 8) displayText = "Chủ Nhật";
+                
+                e.Value = displayText;
+                e.FormattingApplied = true;
+            }
+            else if (dgvPhanCong.Columns[e.ColumnIndex].Name == "CaHoc" && e.Value != null)
+            {
+                byte ca = Convert.ToByte(e.Value);
+                e.Value = $"Ca {ca}";
+                e.FormattingApplied = true;
             }
         }
 
@@ -272,19 +291,13 @@ namespace BTL_LTTQ.GUI
             dtpNgayBatDau.Value = Convert.ToDateTime(row["NgayBatDau"]);
             dtpNgayKetThuc.Value = Convert.ToDateTime(row["NgayKetThuc"]);
 
-            string gioBD = row["GioBatDau"]?.ToString() ?? "07:00";
-            string gioKT = row["GioKetThuc"]?.ToString() ?? "09:00";
+            // SET CA HỌC VÀ THỨ
+            byte caHoc = Convert.ToByte(row["CaHoc"]);
+            byte thu = Convert.ToByte(row["Thu"]);
+            cmbCa.SelectedValue = caHoc;  // HOẶC cmbCaHoc
+            cmbThu.SelectedValue = thu;
 
-            if (DateTime.TryParseExact(gioBD, "HH:mm", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime timeBD))
-                dtpGioBatDau.Value = DateTime.Today.Add(timeBD.TimeOfDay);
-            else
-                dtpGioBatDau.Value = DateTime.Today.AddHours(7);
-
-            if (DateTime.TryParseExact(gioKT, "HH:mm", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime timeKT))
-                dtpGioKetThuc.Value = DateTime.Today.Add(timeKT.TimeOfDay);
-            else
-                dtpGioKetThuc.Value = DateTime.Today.AddHours(9);
-
+            // ... (giữ nguyên phần còn lại)
             var kvRow = bll.LayKhuVuc().Select($"TenKhuVuc = '{row["Toa"]}'").FirstOrDefault();
             if (kvRow != null)
             {
@@ -338,8 +351,8 @@ namespace BTL_LTTQ.GUI
                 NgayPC = dtpNgayPC.Value.Date,
                 NgayBatDau = dtpNgayBatDau.Value.Date,
                 NgayKetThuc = dtpNgayKetThuc.Value.Date,
-                GioBatDau = dtpGioBatDau.Value.TimeOfDay,
-                GioKetThuc = dtpGioKetThuc.Value.TimeOfDay,
+                CaHoc = (byte)cmbCa.SelectedValue,  // GIỮ NGUYÊN
+                Thu = (byte)cmbThu.SelectedValue,
                 MaPhong = cmbPhongHoc.SelectedValue?.ToString(),
                 MaGV = cmbMaGv.SelectedValue?.ToString(),
                 MaLop = cmbLopTC.SelectedValue?.ToString()
@@ -352,8 +365,8 @@ namespace BTL_LTTQ.GUI
             dtpNgayPC.Value = DateTime.Today;
             dtpNgayBatDau.Value = DateTime.Today;
             dtpNgayKetThuc.Value = DateTime.Today.AddDays(30);
-            dtpGioBatDau.Value = DateTime.Today.AddHours(7);
-            dtpGioKetThuc.Value = DateTime.Today.AddHours(9);
+            cmbCa.SelectedIndex = 0;  // HOẶC cmbCaHoc
+            cmbThu.SelectedIndex = 0;
             cmbKhuVuc.SelectedIndex = 0;
             cmbPhongHoc.DataSource = null;
             cmbKhoa.SelectedIndex = 0;
@@ -377,81 +390,32 @@ namespace BTL_LTTQ.GUI
                 return;
             }
 
-            // KIỂM TRA LỚP ĐÃ ĐƯỢC PHÂN CÔNG CHƯA
             if (bll.KiemTraLopDaPhanCong(pc.MaLop))
             {
-                string tenLop = cmbLopTC.Text;
-                MessageBox.Show(
-                    $"LỚP TÍN CHỈ ĐÃ ĐƯỢC PHÂN CÔNG!\n\n" +
-                    $"Lớp: {tenLop}\n" +
-                    $"Mã lớp: {pc.MaLop}\n\n" +
-                    $"Lớp này đã được phân công cho giảng viên khác.\n" +
-                    $"Vui lòng chọn lớp khác hoặc xóa phân công cũ trước.",
-                    "Lớp đã được phân công",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-                cmbLopTC.Focus();
+                MessageBox.Show($"LỚP TÍN CHỈ ĐÃ ĐƯỢC PHÂN CÔNG!\n\nLớp: {cmbLopTC.Text}\nMã lớp: {pc.MaLop}", "Lớp đã được phân công", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (bll.KiemTraTrungLichGV(pc.MaGV, pc.NgayBatDau, pc.NgayKetThuc, pc.GioBatDau, pc.GioKetThuc))
+            if (bll.KiemTraTrungLichGV(pc.MaGV, pc.NgayBatDau, pc.NgayKetThuc, pc.Thu, pc.CaHoc))
             {
-                string tenGV = cmbTenGV.Text;
-                MessageBox.Show(
-                    $"LỊCH GIẢNG VIÊN TRÙNG!\n\n" +
-                    $"Giảng viên: {tenGV}\n" +
-                    $"Mã GV: {pc.MaGV}\n\n" +
-                    $"Giảng viên này đã có lịch dạy trùng với thời gian:\n" +
-                    $"Từ {pc.NgayBatDau:dd/MM/yyyy} đến {pc.NgayKetThuc:dd/MM/yyyy}\n" +
-                    $"Giờ: {pc.GioBatDau:hh\\:mm} - {pc.GioKetThuc:hh\\:mm}",
-                    "Lịch giảng viên trùng",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
+                MessageBox.Show($"LỊCH GIẢNG VIÊN TRÙNG!\n\nGiảng viên: {cmbTenGV.Text}\nThứ: {cmbThu.Text}\nCa: {cmbCa.Text}", "Lịch trùng", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (bll.KiemTraTrungPhong(pc.MaPhong, pc.NgayBatDau, pc.NgayKetThuc, pc.GioBatDau, pc.GioKetThuc))
+            if (bll.KiemTraTrungPhong(pc.MaPhong, pc.NgayBatDau, pc.NgayKetThuc, pc.Thu, pc.CaHoc))
             {
-                MessageBox.Show(
-                    $"PHÒNG HỌC ĐÃ ĐƯỢC SỬ DỤNG!\n\n" +
-                    $"Phòng: {pc.MaPhong}\n\n" +
-                    $"Phòng này đã được đăng ký sử dụng trong thời gian:\n" +
-                    $"Từ {pc.NgayBatDau:dd/MM/yyyy} đến {pc.NgayKetThuc:dd/MM/yyyy}\n" +
-                    $"Giờ: {pc.GioBatDau:hh\\:mm} - {pc.GioKetThuc:hh\\:mm}\n\n" +
-                    $"Vui lòng chọn phòng khác hoặc thay đổi thời gian.",
-                    "Phòng học đã được sử dụng",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-                cmbPhongHoc.Focus();
+                MessageBox.Show($"PHÒNG ĐÃ ĐƯỢC SỬ DỤNG!\n\nPhòng: {pc.MaPhong}\nThứ: {cmbThu.Text}\nCa: {cmbCa.Text}", "Phòng trùng", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (bll.Them(pc))
             {
-                string tenLop = cmbLopTC.Text;
-                string tenGV = cmbTenGV.Text;
-                MessageBox.Show(
-                    $"THÊM PHÂN CÔNG THÀNH CÔNG!\n\n" +
-                    $"Mã phân công: {pc.MaPC}\n" +
-                    $"Giảng viên: {tenGV}\n" +
-                    $"Lớp: {tenLop}\n" +
-                    $"Phòng: {pc.MaPhong}\n" +
-                    $"Thời gian: {pc.NgayBatDau:dd/MM/yyyy} - {pc.NgayKetThuc:dd/MM/yyyy}\n" +
-                    $"Giờ học: {pc.GioBatDau:hh\\:mm} - {pc.GioKetThuc:hh\\:mm}\n\n" +
-                    $"✓ Lớp đã được đánh dấu 'Đã phân công'",
-                    "Thành công",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+                MessageBox.Show("THÊM THÀNH CÔNG!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadData();
             }
             else
             {
-                MessageBox.Show(
-                    "Không thể thêm phân công!\n\n" +
-                    "Vui lòng kiểm tra lại thông tin hoặc liên hệ quản trị viên.",
-                    "Thêm thất bại",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                MessageBox.Show("Thêm thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -520,75 +484,32 @@ namespace BTL_LTTQ.GUI
             var pc = GetInput();
             pc.MaPC = currentPC.MaPC;
 
-            // Kiểm tra nếu đổi lớp mới
-            if (pc.MaLop != currentPC.MaLop)
+            if (pc.MaLop != currentPC.MaLop && bll.KiemTraLopDaPhanCong(pc.MaLop))
             {
-                if (bll.KiemTraLopDaPhanCong(pc.MaLop))
-                {
-                    string tenLop = cmbLopTC.Text;
-                    MessageBox.Show(
-                        $"LỚP MỚI ĐÃ ĐƯỢC PHÂN CÔNG!\n\n" +
-                        $"Lớp: {tenLop}\n" +
-                        $"Mã lớp: {pc.MaLop}\n\n" +
-                        $"Lớp này đã được phân công cho giảng viên khác.\n" +
-                        $"Vui lòng chọn lớp khác.",
-                        "Lớp đã được phân công",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning);
-                    cmbLopTC.Focus();
-                    return;
-                }
-            }
-
-            if (bll.KiemTraTrungLichGV(pc.MaGV, pc.NgayBatDau, pc.NgayKetThuc, pc.GioBatDau, pc.GioKetThuc, pc.MaPC))
-            {
-                string tenGV = cmbTenGV.Text;
-                MessageBox.Show(
-                    $"LỊCH GIẢNG VIÊN TRÙNG!\n\n" +
-                    $"Giảng viên: {tenGV}\n" +
-                    $"Thời gian: {pc.NgayBatDau:dd/MM/yyyy} - {pc.NgayKetThuc:dd/MM/yyyy}\n" +
-                    $"Giờ: {pc.GioBatDau:hh\\:mm} - {pc.GioKetThuc:hh\\:mm}",
-                    "Lịch giảng viên trùng",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
+                MessageBox.Show($"LỚP MỚI ĐÃ ĐƯỢC PHÂN CÔNG!\n\nLớp: {cmbLopTC.Text}", "Lớp đã được phân công", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (bll.KiemTraTrungPhong(pc.MaPhong, pc.NgayBatDau, pc.NgayKetThuc, pc.GioBatDau, pc.GioKetThuc, pc.MaPC))
+            if (bll.KiemTraTrungLichGV(pc.MaGV, pc.NgayBatDau, pc.NgayKetThuc, pc.Thu, pc.CaHoc, pc.MaPC))
             {
-                MessageBox.Show(
-                    $"PHÒNG HỌC ĐÃ ĐƯỢC SỬ DỤNG!\n\n" +
-                    $"Phòng: {pc.MaPhong}\n" +
-                    $"Thời gian: {pc.NgayBatDau:dd/MM/yyyy} - {pc.NgayKetThuc:dd/MM/yyyy}\n" +
-                    $"Giờ: {pc.GioBatDau:hh\\:mm} - {pc.GioKetThuc:hh\\:mm}",
-                    "Phòng học đã được sử dụng",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
+                MessageBox.Show($"LỊCH GIẢNG VIÊN TRÙNG!\n\nGiảng viên: {cmbTenGV.Text}", "Lịch trùng", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (bll.KiemTraTrungPhong(pc.MaPhong, pc.NgayBatDau, pc.NgayKetThuc, pc.Thu, pc.CaHoc, pc.MaPC))
+            {
+                MessageBox.Show($"PHÒNG ĐÃ ĐƯỢC SỬ DỤNG!\n\nPhòng: {pc.MaPhong}", "Phòng trùng", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (bll.Sua(pc, currentPC.MaLop))
             {
-                string thongBaoDoiLop = pc.MaLop != currentPC.MaLop
-                    ? $"\n✓ Lớp cũ '{currentPC.MaLop}' → Chưa phân công\n✓ Lớp mới '{pc.MaLop}' → Đã phân công"
-                    : "";
-
-                MessageBox.Show(
-                    $"SỬA PHÂN CÔNG THÀNH CÔNG!\n\n" +
-                    $"Mã phân công: {pc.MaPC}{thongBaoDoiLop}",
-                    "Sửa thành công",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+                MessageBox.Show("SỬA THÀNH CÔNG!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadData();
             }
             else
             {
-                MessageBox.Show(
-                    "Không thể sửa phân công!\n\n" +
-                    "Vui lòng kiểm tra lại thông tin.",
-                    "Sửa thất bại",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                MessageBox.Show("Sửa thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -597,16 +518,95 @@ namespace BTL_LTTQ.GUI
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             string keyword = txtTimKiem.Text.Trim();
-            if (keyword == "Nhập mã PC hoặc mã GV..." || string.IsNullOrEmpty(keyword))
+            if (keyword == "Nhập mã PC, mã GV hoặc tên GV..." || string.IsNullOrEmpty(keyword))
             {
                 LoadData();
                 return;
             }
 
-            var filtered = dtPhanCong.AsEnumerable()
-                .Where(r => r.Field<string>("MaPC").Contains(keyword) || r.Field<string>("MaGV").Contains(keyword))
-                .CopyToDataTable();
-            dgvPhanCong.DataSource = filtered;
+            try
+            {
+                // Lọc theo MaPC, MaGV hoặc TenGV
+                var filtered = dtPhanCong.AsEnumerable()
+                    .Where(r => 
+                    {
+                        string maPC = r.Field<string>("MaPC") ?? "";
+                        string maGV = r.Field<string>("MaGV") ?? "";
+                        string tenGV = r.Field<string>("TenGV") ?? "";
+                        
+                        return maPC.IndexOf(keyword, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                               maGV.IndexOf(keyword, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                               tenGV.IndexOf(keyword, StringComparison.OrdinalIgnoreCase) >= 0;
+                    });
+
+                if (filtered.Any())
+                {
+                    dgvPhanCong.DataSource = filtered.CopyToDataTable();
+                    int count = filtered.Count();
+                    MessageBox.Show(
+                        $"Tìm thấy {count} kết quả với từ khóa: '{keyword}'", 
+                        "Kết quả tìm kiếm", 
+                        MessageBoxButtons.OK, 
+                        MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show(
+                        $"Không tìm thấy kết quả nào với từ khóa: '{keyword}'", 
+                        "Kết quả tìm kiếm", 
+                        MessageBoxButtons.OK, 
+                        MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    $"Lỗi khi tìm kiếm: {ex.Message}", 
+                    "Lỗi", 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Error);
+                
+                LoadData();
+            }
+        }
+
+        private void SetupCaHocComboBox()
+        {
+            var dtCa = new DataTable();
+            dtCa.Columns.Add("Value", typeof(byte));
+            dtCa.Columns.Add("Display", typeof(string));
+            
+            dtCa.Rows.Add((byte)1, "Ca 1 (7:00 - 9:30)");
+            dtCa.Rows.Add((byte)2, "Ca 2 (9:35 - 12:00)");
+            dtCa.Rows.Add((byte)3, "Ca 3 (13:00 - 15:30)");
+            dtCa.Rows.Add((byte)4, "Ca 4 (15:35 - 18:00)");
+            dtCa.Rows.Add((byte)5, "Ca 5 (18:30 - 21:00)");
+            
+            // CHỌN TÊN ĐÚNG: cmbCa HOẶC cmbCaHoc (kiểm tra Designer)
+            cmbCa.DataSource = dtCa;  // HOẶC cmbCaHoc
+            cmbCa.DisplayMember = "Display";
+            cmbCa.ValueMember = "Value";
+            cmbCa.SelectedIndex = 0;
+        }
+
+        private void SetupThuComboBox()
+        {
+            var dtThu = new DataTable();
+            dtThu.Columns.Add("Value", typeof(byte));
+            dtThu.Columns.Add("Display", typeof(string));
+            
+            dtThu.Rows.Add((byte)2, "Thứ Hai");
+            dtThu.Rows.Add((byte)3, "Thứ Ba");
+            dtThu.Rows.Add((byte)4, "Thứ Tư");
+            dtThu.Rows.Add((byte)5, "Thứ Năm");
+            dtThu.Rows.Add((byte)6, "Thứ Sáu");
+            dtThu.Rows.Add((byte)7, "Thứ Bảy");
+            dtThu.Rows.Add((byte)8, "Chủ Nhật");
+            
+            cmbThu.DataSource = dtThu;
+            cmbThu.DisplayMember = "Display";
+            cmbThu.ValueMember = "Value";
+            cmbThu.SelectedIndex = 0;
         }
     }
 }

@@ -15,16 +15,13 @@ namespace BTL_LTTQ.BLL
 
         public bool Them(PhanCongDTO pc)
         {
-            // Kiểm tra TinhTrangLop trước khi thêm
             if (dal.KiemTraLopDaPhanCong(pc.MaLop))
             {
-                return false; // Lớp đã được phân công
+                return false;
             }
 
-            // Thêm phân công
             bool result = dal.Them(pc);
             
-            // Nếu thêm thành công → cập nhật TinhTrangLop = 1
             if (result)
             {
                 dal.CapNhatTinhTrangLop(pc.MaLop, true);
@@ -35,19 +32,17 @@ namespace BTL_LTTQ.BLL
 
         public bool Sua(PhanCongDTO pc, string maLopCu)
         {
-            // Nếu đổi lớp → kiểm tra lớp mới
             if (pc.MaLop != maLopCu && dal.KiemTraLopDaPhanCong(pc.MaLop))
             {
-                return false; // Lớp mới đã được phân công
+                return false;
             }
 
             bool result = dal.Sua(pc, maLopCu);
 
-            // Nếu sửa thành công và đổi lớp
             if (result && pc.MaLop != maLopCu)
             {
-                dal.CapNhatTinhTrangLop(maLopCu, false);  // Lớp cũ → chưa phân công
-                dal.CapNhatTinhTrangLop(pc.MaLop, true);  // Lớp mới → đã phân công
+                dal.CapNhatTinhTrangLop(maLopCu, false);
+                dal.CapNhatTinhTrangLop(pc.MaLop, true);
             }
 
             return result;
@@ -57,7 +52,6 @@ namespace BTL_LTTQ.BLL
         {
             bool result = dal.Xoa(maPC, maLop);
 
-            // Nếu xóa thành công → cập nhật TinhTrangLop = 0
             if (result)
             {
                 dal.CapNhatTinhTrangLop(maLop, false);
@@ -68,11 +62,13 @@ namespace BTL_LTTQ.BLL
 
         public bool KiemTraMaPCTrung(string maPC) => dal.KiemTraMaPCTrung(maPC);
 
-        public bool KiemTraTrungLichGV(string maGV, DateTime? ngayBD, DateTime? ngayKT, TimeSpan gioBD, TimeSpan gioKT, string maPC = null)
-            => dal.KiemTraTrungLichGV(maGV, ngayBD, ngayKT, gioBD, gioKT, maPC);
+        // ✅ SỬA: Đổi TimeSpan → byte
+        public bool KiemTraTrungLichGV(string maGV, DateTime? ngayBD, DateTime? ngayKT, byte thu, byte caHoc, string maPC = null)
+            => dal.KiemTraTrungLichGV(maGV, ngayBD, ngayKT, thu, caHoc, maPC);
 
-        public bool KiemTraTrungPhong(string maPhong, DateTime? ngayBD, DateTime? ngayKT, TimeSpan gioBD, TimeSpan gioKT, string maPC = null)
-            => dal.KiemTraTrungPhong(maPhong, ngayBD, ngayKT, gioBD, gioKT, maPC);
+        // ✅ SỬA: Đổi TimeSpan → byte
+        public bool KiemTraTrungPhong(string maPhong, DateTime? ngayBD, DateTime? ngayKT, byte thu, byte caHoc, string maPC = null)
+            => dal.KiemTraTrungPhong(maPhong, ngayBD, ngayKT, thu, caHoc, maPC);
 
         public bool KiemTraLopDaPhanCong(string maLop) => dal.KiemTraLopDaPhanCong(maLop);
 
@@ -119,7 +115,7 @@ namespace BTL_LTTQ.BLL
                 SELECT ltc.MaLop, ltc.TenLop 
                 FROM LopTinChi ltc
                 WHERE ltc.MaMH = @MaMH
-                  AND ltc.TinhTrangLop = 0";
+                  AND ltc.TinhTrang = 0";
             return DatabaseConnection.ExecuteQuery(query, new[] { new SqlParameter("@MaMH", maMH) });
         }
 
@@ -129,7 +125,7 @@ namespace BTL_LTTQ.BLL
                 SELECT ltc.MaLop, ltc.TenLop 
                 FROM LopTinChi ltc
                 WHERE ltc.MaMH = @MaMH
-                  AND ltc.TinhTrangLop = 1";
+                  AND ltc.TinhTrang = 1";
             return DatabaseConnection.ExecuteQuery(query, new[] { new SqlParameter("@MaMH", maMH) });
         }
     }
